@@ -6,6 +6,7 @@ import Contact from "./Contato";
 
 const Home = () => {
   const [showProjects, setShowProjects] = useState(false);
+  const [showContact, setShowContact] = useState(false); // Estado para o componente de contato
 
   const handleProjectsClick = () => {
     setShowProjects(true); // Exibe a seção de projetos
@@ -16,13 +17,24 @@ const Home = () => {
     document.getElementById("sobre-mim").scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleContactClick = () => {
+    setShowContact(true); // Exibe o contato
+  };
+
+  const handleCloseContact = () => {
+    setShowContact(false); // Fecha o contato
+  };
+
   return (
     <HomeContainer>
       <Section>
         <TextContainer>
           <Title>Olá, sou Isaias Lourenço</Title>
           <Subtitle>Desenvolvedor Front-End e Criador de Soluções Digitais</Subtitle>
-          <CallToAction onClick={handleProjectsClick}>Veja meus projetos →</CallToAction>
+          <ButtonsContainer>
+            <CallToAction onClick={handleProjectsClick}>Veja meus projetos →</CallToAction>
+            <ContactButton onClick={handleContactClick}>Fale Comigo →</ContactButton>
+          </ButtonsContainer>
           <Arrow onClick={handleArrowClick}>
             <span>Sobre Mim</span>
           </Arrow>
@@ -32,9 +44,9 @@ const Home = () => {
       <SlidingProjects visible={showProjects}>
         <CloseButton onClick={() => setShowProjects(false)}>×</CloseButton>
         <Projects />
-
       </SlidingProjects>
-      <Contact />
+      {/* Adicionando o componente Contact com controle de visibilidade */}
+      <Contact visible={showContact} onClose={handleCloseContact} />
     </HomeContainer>
   );
 };
@@ -45,10 +57,10 @@ const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center
   width: 100%;
 `;
 
-// Definição da animação `bounce`
 const bounce = keyframes`
   0% {
     transform: translate(-50%, 0); /* Posição inicial */
@@ -61,7 +73,6 @@ const bounce = keyframes`
   }
 `;
 
-// Componente `Arrow` com a animação aplicada
 const Arrow = styled.div`
   position: absolute;
   bottom: 40px;
@@ -71,11 +82,10 @@ const Arrow = styled.div`
   height: 35px;
   background: url(/seta_preta.png) no-repeat center;
   background-size: contain;
-  animation: ${bounce} 0.8s infinite ease-in-out; /* Aplicando a animação */
+  animation: ${bounce} 0.8s infinite ease-in-out;
   border: none;
   outline: none;
 
-  /* Adicionando o texto dentro da seta */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,6 +127,48 @@ const Subtitle = styled.p`
   margin-bottom: 30px;
 `;
 
+const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 150px;
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 300px;
+`;
+
+const CallToAction = styled.button`
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px 0;
+  transition: background 0.3s;
+  
+  &:hover {
+    background-color: #e03e00;
+  }
+`;
+
+const ContactButton = styled.button`
+  font-size: 18px;
+  color: #fff;
+  background: #ff4500;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #ff6347;
+  }
+`;
+
 const SlidingProjects = styled.div`
   position: fixed;
   top: 0;
@@ -133,7 +185,6 @@ const SlidingProjects = styled.div`
   overflow-y: auto; /* Para rolagem interna, caso necessário */
 `;
 
-// Botão de Fechamento
 const CloseButton = styled.button`
   position: absolute;
   top: 20px;
@@ -147,21 +198,5 @@ const CloseButton = styled.button`
 
   &:hover {
     color: #ff6347;
-  }
-`;
-
-const CallToAction = styled.a`
-  font-size: 18px;
-  color: #fff;
-  background: #ff4500;
-  padding: 12px 24px;
-  text-decoration: none;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-
-  &:hover {
-    background: #ff6347;
   }
 `;

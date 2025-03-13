@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SplashScreen from "./components/pages/SplashScreen";
 import Home from "./components/pages/Home";
-import Details from "./components/pages/Details";
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -19,7 +18,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/character/:id" element={<Details />} />
+            
           </Routes>
         </BrowserRouter>
       )}

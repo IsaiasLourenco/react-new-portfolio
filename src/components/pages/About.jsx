@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-// const handleBackToTopClick = () => {
-//   window.scrollTo({ top: 0, behavior: "smooth" });
-// };
-
 const About = () => {
   return (
     <Section id="sobre-mim">
@@ -13,19 +9,27 @@ const About = () => {
         <TextContainer>
           <Title>Sobre Mim</Title>
           <Description>
-            Trabalhei por 10 anos como programador Cobol e Visual Basic for Applications na IBM, seis meses como programador PL-SQL na New Soft Intelligence e seis meses como Quality Assurance na BairesDev.
-            Sou estudante dedicado de Análise e Desenvolvimento de Sistemas e cursando Dev em Dobro Desenvolvimento Full Stack desde janeiro de 2025. Possuo habilidades sólidas em HTML, CSS, JavaScript, SQL, Git e GitHub. Aprendendo Node.js, TypeScript e Express.
-            Estou comprometido em aprimorar minhas habilidades técnicas e adquirir experiência prática no desenvolvimento de soluções web. Determinado a me destacar na criação de interfaces visuais intuitivas e no desenvolvimento de sistemas robustos e escaláveis no FrontEnd e no BackEnd.
-            Busco oportunidades para aplicar meu conhecimento e paixão pela tecnologia em projetos desafiadores e contribuir para o sucesso da equipe.<br></br><br></br>
-            📧 <EmailLink href="mailto:isaiaslourenco2020@gmail.com?subject=Contato%20via%20Portfolio&body=Olá%20Isaias,%20gostaria%20de%20entrar%20em%20contato..." title="Me envie um e-mail" >
-              isaiaslourenco2020@gmail.com
+            <Paragraph>
+              Trabalhei por 10 anos como programador Cobol e Visual Basic for Applications na IBM, seis meses como programador PL-SQL na New Soft Intelligence e seis meses como Quality Assurance na BairesDev.
+              Sou estudante dedicado de Análise e Desenvolvimento de Sistemas e cursando Dev em Dobro Desenvolvimento Full Stack desde janeiro de 2025. Possuo habilidades sólidas em HTML, CSS, JavaScript, SQL, Git e GitHub. Aprendendo Node.js, TypeScript e Express.
+              Estou comprometido em aprimorar minhas habilidades técnicas e adquirir experiência prática no desenvolvimento de soluções web. Determinado a me destacar na criação de interfaces visuais intuitivas e no desenvolvimento de sistemas robustos e escaláveis no FrontEnd e no BackEnd.
+              Busco oportunidades para aplicar meu conhecimento e paixão pela tecnologia em projetos desafiadores e contribuir para o sucesso da equipe.<br></br><br></br>
+            </Paragraph>
+             <EmailLink href="mailto:isaiaslourenco2020@gmail.com?subject=Contato%20via%20Portfolio&body=Olá%20Isaias,%20gostaria%20de%20entrar%20em%20contato..." title="Me envie um e-mail" >
+             📧 isaiaslourenco2020@gmail.com
             </EmailLink>
           </Description>
+          <BackToHomeButton onClick={handleBackToHomeClick}>
+            ↑ Voltar
+          </BackToHomeButton>
         </TextContainer>
       </Content>
-      {/* <BackToTop onClick={handleBackToTopClick} /> */}
     </Section>
   );
+};
+
+const handleBackToHomeClick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 export default About;
@@ -61,8 +65,14 @@ const ProfileImage = styled.img`
   border: 4px solid #fff;
 `;
 
+const Paragraph = styled.p`
+  margin-bottom: 16px; /* Ajuste para espaço entre os parágrafos */
+`;
+
 const TextContainer = styled.div`
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Title = styled.h2`
@@ -74,12 +84,16 @@ const Description = styled.p`
   font-size: 18px;
   line-height: 1.6;
   color: #ccc;
+  text-align: justify; /* Justificando o texto */
 `;
 
 const EmailLink = styled.a`
-  color: #ffffee; /* Cor personalizada */
-  text-decoration: none; /* Remove o sublinhado */
+  display: block; /* Faz o link ocupar toda a largura disponível */
+  text-align: center; /* Centraliza o e-mail */
+  color: #ffffee;
+  text-decoration: none;
   font-weight: bold;
+  margin-top: 10px; /* Espaço acima do e-mail */
 
   &:hover {
     color:rgb(122, 112, 112);
@@ -87,31 +101,19 @@ const EmailLink = styled.a`
   }
 `;
 
-// const BackToTop = styled.div`
-//   position: fixed;
-//   bottom: 20px;
-//   right: 20px;
-//   width: 40px;
-//   height: 40px;
-//   background: url(/seta_topo.png) no-repeat center;
-//   background-size: contain;
-//   cursor: pointer;
-//   z-index: 1000;
+const BackToHomeButton = styled.button`
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  align-self: center;
 
-//   animation: pulse 1.5s infinite; /* Efeito pulsante */
-//   &:hover {
-//     opacity: 0.8;
-//   }
-// `;
-
-// const pulse = keyframes`
-//   0% {
-//     transform: scale(1);
-//   }
-//   50% {
-//     transform: scale(1.1);
-//   }
-//   100% {
-//     transform: scale(1);
-//   }
-// `;
+  &:hover {
+    background-color: #e03e00;
+  }
+`;
