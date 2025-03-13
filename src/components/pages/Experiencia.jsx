@@ -5,7 +5,7 @@ const Experiencia = ({ visible, onClose }) => {
   return (
     <SlidingExperiencia $visible={visible}>
       <CloseButton onClick={onClose}>×</CloseButton>
-      <Title>Experiências Profissionais</Title>
+      <Title>Experiência Profissional</Title>
       <ExperienceList>
         <Experience>
           <Year>2023 - 2024</Year>

@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHtml5, faCss3Alt, faJs } from '@fortawesome/free-brands-svg-icons'; // HTML, CSS e JS
+import { faReact } from '@fortawesome/free-brands-svg-icons'; // React
+import { faNodeJs } from '@fortawesome/free-brands-svg-icons'; // Node.js
+import { faDatabase } from '@fortawesome/free-solid-svg-icons'; // PostgreSQL
 
 const SplashScreen = ({ onFinish }) => {
   const [showFullBody, setShowFullBody] = useState(false);
@@ -43,6 +48,20 @@ const SplashScreen = ({ onFinish }) => {
           </div>
         </Content>
       </Section>
+
+      {/* Ícones em colunas com 3 ícones à esquerda e 3 à direita */}
+      <IconsContainer>
+        <IconsColumn>
+          <FontAwesomeIcon icon={faHtml5} size="3x" color="#E34F26" />
+          <FontAwesomeIcon icon={faCss3Alt} size="3x" color="#1572B6" />
+          <FontAwesomeIcon icon={faJs} size="3x" color="#F7DF1E" />
+        </IconsColumn>
+        <IconsColumn>
+          <FontAwesomeIcon icon={faReact} size="3x" color="#61DAFB" />
+          <FontAwesomeIcon icon={faNodeJs} size="3x" color="#8CC84B" />
+          <FontAwesomeIcon icon={faDatabase} size="3x" color="#336791" />
+        </IconsColumn>
+      </IconsContainer>
     </SplashContainer>
   );
 };
@@ -118,7 +137,6 @@ const PersonalContainer = styled.div`
   position: relative;
   width: 150px; /* Menor largura inicial para o rosto */
   height: 300px; /* Altura consistente */
-  
 `;
 
 const Myself = styled.img`
@@ -138,13 +156,26 @@ const Text = styled.h1`
   margin-top: 10px;
   font-size: 16px;
   animation: ${shake} 0.5s infinite; /* Efeito de tremor */
+`;
 
-`
 const SubText = styled.h1`
   margin-top: 10px;
   font-size: 10px;
   animation: ${shake} 0.5s infinite; /* Efeito de tremor */
+`;
 
-`
+// Container dos ícones
+const IconsContainer = styled.div`
+  display: flex;
+  justify-content: space-between; /* Alinha as colunas à esquerda e à direita */
+  width: 80%; /* Controla a largura da área onde os ícones são exibidos */
+  position: absolute;
+  bottom: 10%;
+`;
 
-  ;
+const IconsColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaçamento entre os ícones */
+  align-items: center;
+`;
