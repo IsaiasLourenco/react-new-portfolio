@@ -41,11 +41,11 @@ const SplashScreen = ({ onFinish }) => {
               $visible={showFullBody}
             />
           </PersonalContainer>
-          <div>
+          <BoxPraCima>
             <Logo src="/ico.png" alt="Logo Portfolio" />
             <Text>Bem-vindo ao meu Perfil Profissional!</Text>
             <SubText> Portfolio de Isaias Lourenço...</SubText>
-          </div>
+          </BoxPraCima>
         </Content>
       </Section>
 
@@ -109,10 +109,30 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  
   background: linear-gradient(135deg, #1e90ff, #000);
   color: white;
-  text-align: center;
+  
+  @media (max-width: 480px) {
+    width: 100%; /* Agora ocupa toda a tela */
+    height: 100%;
+  }
+
+`;
+
+const BoxPraCima = styled.div`
+  margin-top: -50px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo */
+  gap: 10px; /* Ajuste do espaçamento entre logo, título e subtítulo */
+
+  @media (max-width: 480px){
+      margin-bottom: 250px;
+      margin-left: 80px;
+  }
+
 `;
 
 const SplashContainer = styled.div`
@@ -123,14 +143,21 @@ const SplashContainer = styled.div`
   height: 100vh;
   color: #fff;
   text-align: center;
+  overflow: hidden;
 `;
 
 const Content = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start; /* Alinha à esquerda */
-  gap: 20px; /* Espaçamento entre o personagem e o restante */
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center;
+  gap: 10px; /* Espaçamento entre o personagem e o restante *
+
+  @media (max-width: 480px) {
+    width: 100%; /* Agora ocupa toda a tela */
+    height: 100%;
+    
+  }
 `;
 
 const PersonalContainer = styled.div`
@@ -145,23 +172,54 @@ const Myself = styled.img`
   height: auto;
   opacity: ${(props) => (props.$visible ? 1 : 0)};
   transition: opacity 1s ease-in-out; /* Transição suave */
+  margin-top: 70px;
+  margin-bottom: 0px;
+  margin-left: -75px;
+
+  @media (max-width: 480px) {
+    display: flex;
+    flex-direction:column;
+    margin-top: 50px;
+    margin-left: 10px;
+  }
+
 `;
 
 const Logo = styled.img`
   width: 150px;
   animation: ${pulse} 1.5s infinite; /* Efeito de pulsação */
+  
+  
+  @media (max-width: 480px) {
+     margin-right: 80px;=  
+  }
+
+  }
 `;
 
 const Text = styled.h1`
   margin-top: 10px;
   font-size: 16px;
   animation: ${shake} 0.5s infinite; /* Efeito de tremor */
+  
+
+  @media (max-width: 480px) {
+    margin-left: -50px;
+    margin-top: 20px;
+  }
 `;
 
 const SubText = styled.h1`
   margin-top: 10px;
   font-size: 10px;
   animation: ${shake} 0.5s infinite; /* Efeito de tremor */
+  
+
+  @media (max-width: 480px) {
+    margin-left: -50px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
 `;
 
 // Container dos ícones
@@ -179,3 +237,4 @@ const IconsColumn = styled.div`
   gap: 20px; /* Espaçamento entre os ícones */
   align-items: center;
 `;
+

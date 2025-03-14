@@ -88,6 +88,12 @@ const HomeContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 10px; 
+  }
+
 `;
 
 const bounce = keyframes`
@@ -128,6 +134,15 @@ const Arrow = styled.div`
   }
 
   cursor: pointer; /* Cursor de clique */
+
+  @media (max-width: 480px) {
+    bottom: 20px;
+    width: 80px;
+    height: 40px;
+    left: 55%;
+    transform: translateX(-50%);
+  }
+
 `;
 
 const Section = styled.div`
@@ -149,11 +164,21 @@ const Title = styled.h1`
   font-size: 48px;
   font-weight: bold;
   margin-bottom: 20px;
+
+  @media(max-width: 480px){
+    font-size: 20px;
+  }
+
 `;
 
 const Subtitle = styled.p`
   font-size: 24px;
   margin-bottom: 30px;
+
+  @media (max-width: 480px){
+    font-size: 15px
+  }
+
 `;
 
 const ButtonsContainer = styled.div`
@@ -165,6 +190,13 @@ const ButtonsContainer = styled.div`
   margin-top: 20px;
   width: 100%;
   max-width: 300px;
+
+  @media (max-width: 480px) {
+    max-width: 100%; /* Garante que os botões ocupem mais espaço */
+    width: 80%;
+    padding: 0 20px; /* Ajuste para centralizar */
+    margin-left: 20px;
+  }
 `;
 
 const CallToAction = styled.button`
@@ -181,6 +213,11 @@ const CallToAction = styled.button`
   &:hover {
     background-color: #e03e00;
   }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+
 `;
 
 const ContactButton = styled.button`
@@ -195,6 +232,10 @@ const ContactButton = styled.button`
 
   &:hover {
     background: #ff6347;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
   }
 `;
 
