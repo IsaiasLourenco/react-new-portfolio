@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faJs } from '@fortawesome/free-brands-svg-icons'; // HTML, CSS e JS
-import { faReact } from '@fortawesome/free-brands-svg-icons'; // React
-import { faNodeJs } from '@fortawesome/free-brands-svg-icons'; // Node.js
+import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs } from '@fortawesome/free-brands-svg-icons'; // FontAwesome
 import { faDatabase } from '@fortawesome/free-solid-svg-icons'; // PostgreSQL
 
 const SplashScreen = ({ onFinish }) => {
@@ -59,7 +57,7 @@ const SplashScreen = ({ onFinish }) => {
         <IconsColumn>
           <FontAwesomeIcon icon={faReact} size="3x" color="#61DAFB" />
           <FontAwesomeIcon icon={faNodeJs} size="3x" color="#8CC84B" />
-          <FontAwesomeIcon icon={faDatabase} size="3x" color="#336791" />
+          <FontAwesomeIcon icon={faDatabase} size="3x" color="#306D8C" />
         </IconsColumn>
       </IconsContainer>
     </SplashContainer>
@@ -92,17 +90,6 @@ const shake = keyframes`
     transform: translateX(2px);
   }
 `;
-
-const fadeInOut = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
-
-// Estilos
 
 const Section = styled.div`
   display: flex;

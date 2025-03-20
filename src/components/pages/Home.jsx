@@ -7,11 +7,13 @@ import About from "./About";
 import Projects from "./Projects";
 import Contact from "./Contato";
 import Experiencia from "./Experiencia";  // Importando o novo componente
+import Habilidades from "./Habilidades";
 
 const Home = () => {
   const [showProjects, setShowProjects] = useState(false);
   const [showContact, setShowContact] = useState(false); // Estado para o componente de contato
   const [showExperiencia, setShowExperiencia] = useState(false); // Estado para o componente de experiência
+  const [showHabilidades, setShowHabilidades] = useState(false);
 
   const handleProjectsClick = () => {
     setShowProjects(true); // Exibe a seção de projetos
@@ -38,6 +40,14 @@ const Home = () => {
     setShowExperiencia(false); // Fecha a seção de experiências
   };
 
+  const handleHabilidadesClick = () => {
+    setShowHabilidades(true); // Exibe a seção de habilidades
+  };
+
+  const handleCloseHabilidades = () => {
+    setShowHabilidades(false); // Fecha a seção de habilidades
+  };
+
   return (
     <HomeContainer>
       <Section>
@@ -49,11 +59,12 @@ const Home = () => {
 
         <TextContainer>
           <Title>Olá, sou Isaias Lourenço</Title>
-          <Subtitle>Desenvolvedor Front-End e Criador de Soluções Digitais</Subtitle>
+          <Subtitle>Desenvolvedor Full Stack Dev e Criador de Soluções Digitais</Subtitle>
           <ButtonsContainer>
-            <CallToAction onClick={handleProjectsClick}>Veja meus projetos →</CallToAction>
+            <CallToAction onClick={handleProjectsClick}>Meus projetos →</CallToAction>
             <ContactButton onClick={handleContactClick}>Fale Comigo →</ContactButton>
-            <ContactButton onClick={handleExperienciaClick}>← Minhas Experiência Profissional</ContactButton> {/* Novo botão */}
+            <CallToAction onClick={handleHabilidadesClick}>← Minhas Habilidades</CallToAction>
+            <ContactButton onClick={handleExperienciaClick}>← Experiência Profissional</ContactButton>
           </ButtonsContainer>
           <Arrow onClick={handleArrowClick}>
             <span>Sobre Mim</span>
@@ -76,6 +87,7 @@ const Home = () => {
       {/* Adicionando o componente Contact com controle de visibilidade */}
       <Contact visible={showContact} onClose={handleCloseContact} />
       <Experiencia visible={showExperiencia} onClose={handleCloseExperiencia} /> {/* Novo componente de experiência */}
+      <Habilidades visible={showHabilidades} onClose={handleCloseHabilidades} />
     </HomeContainer>
   );
 };
