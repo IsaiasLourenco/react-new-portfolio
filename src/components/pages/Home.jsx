@@ -53,7 +53,7 @@ const Home = () => {
   return (
     <HomeContainer>
       
-        <ThemeToggler />
+        {/* <ThemeToggler /> */}
       
       <Section>
         <TechIconsLeft>
