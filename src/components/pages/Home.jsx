@@ -8,6 +8,8 @@ import Projects from "./Projects";
 import Contact from "./Contato";
 import Experiencia from "./Experiencia";  // Importando o novo componente
 import Habilidades from "./Habilidades";
+import ThemeContext from "../context/ThemeContext";
+import ThemeToggler from "../ThemeToggler";
 
 const Home = () => {
   const [showProjects, setShowProjects] = useState(false);
@@ -50,6 +52,9 @@ const Home = () => {
 
   return (
     <HomeContainer>
+      
+        <ThemeToggler />
+      
       <Section>
         <TechIconsLeft>
           <FontAwesomeIcon icon={faHtml5} size="3x" color="#E34F26" />
@@ -59,7 +64,7 @@ const Home = () => {
 
         <TextContainer>
           <Title>Olá, sou Isaias Lourenço</Title>
-          <Subtitle>Desenvolvedor Full Stack Dev e Criador de Soluções Digitais</Subtitle>
+          <Subtitle>Dev Full Stack e Criador de Soluções Digitais</Subtitle>
           <ButtonsContainer>
             <CallToAction onClick={handleProjectsClick}>Meus projetos →</CallToAction>
             <ContactButton onClick={handleContactClick}>Fale Comigo →</ContactButton>
@@ -100,12 +105,7 @@ const HomeContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-
-  @media (max-width: 480px) {
-    width: 100%;
-    padding: 10px; 
-  }
-
+  height: 150%
 `;
 
 const bounce = keyframes`
@@ -166,6 +166,11 @@ const Section = styled.div`
   background: linear-gradient(135deg, #1e90ff, #000);
   color: white;
   text-align: center;
+
+    @media (max-width: 480px) {
+    width: 100%; /* Garante que cobre toda a largura */
+    padding-top: 20px;
+    top: -50px;
 `;
 
 const TextContainer = styled.div`
