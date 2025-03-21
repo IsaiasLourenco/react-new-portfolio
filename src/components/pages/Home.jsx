@@ -125,8 +125,8 @@ const Arrow = styled.div`
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  width: 35px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
   background: url(/seta_preta.png) no-repeat center;
   background-size: contain;
   animation: ${bounce} 0.8s infinite ease-in-out;
