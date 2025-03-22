@@ -1,7 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import Education from "./Education";
 
 const About = () => {
+  
+  const handleBtnEducationClick = () => {
+    // Rola suavemente até a seção "Educação"
+    document.getElementById("education").scrollIntoView({ behavior: "smooth" });
+  };
+  
   return (
     <Section id="sobre-mim">
       <Content>
@@ -20,7 +27,7 @@ const About = () => {
             </EmailLink>
           </Description>
           <LadoAlado>
-            <GoToEducationButton>
+            <GoToEducationButton onClick={handleBtnEducationClick}>
               ↓ Educação
             </GoToEducationButton>
             <BackToHomeButton onClick={handleBackToHomeClick}>
@@ -29,6 +36,7 @@ const About = () => {
           </LadoAlado>
         </TextContainer>
       </Content>
+      <Education />
     </Section>
   );
 };
@@ -40,12 +48,18 @@ const handleBackToHomeClick = () => {
 export default About;
 
 const Section = styled.div`
+  top: 50px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px 20px;
+  gap: 50px;
   background: linear-gradient(135deg, #ff7f7f, #660000); /* Gradiente vermelho suave */
   color: white;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden:
+  position: relative;
 `;
 
 const Content = styled.div`
@@ -81,11 +95,13 @@ const TextContainer = styled.div`
 `;
 
 const Title = styled.h2`
+  margin-top: 50px;
   font-size: 32px;
   margin-bottom: 16px;
-`;
-
-const Description = styled.p`
+  `;
+  
+  const Description = styled.p`
+  margin-top: 50px;
   font-size: 18px;
   line-height: 1.6;
   color: #ccc;
