@@ -31,7 +31,7 @@ const About = () => {
               ↓ Educação
             </GoToEducationButton>
             <BackToHomeButton onClick={handleBackToHomeClick}>
-              ↑ Voltar
+              ↑ Home
             </BackToHomeButton>
           </LadoAlado>
         </TextContainer>
@@ -117,7 +117,7 @@ const EmailLink = styled.a`
   margin-top: 10px; /* Espaço acima do e-mail */
 
   &:hover {
-    color:rgb(122, 112, 112);
+    color:rgb(85, 78, 192);
     text-decoration: underline;
   }
 `;
@@ -126,7 +126,7 @@ const BackToHomeButton = styled.button`
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #ff4500;
+  background-color: #1772FF;
   color: white;
   border: none;
   border-radius: 5px;
@@ -135,7 +135,7 @@ const BackToHomeButton = styled.button`
   align-self: center;
 
   &:hover {
-    background-color: #e03e00;
+    background-color: rgb(115, 107, 223);
   }
 `;
 
@@ -143,7 +143,7 @@ const GoToEducationButton = styled.button`
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #ff4500;
+  background-color: #1772FF;
   color: white;
   border: none;
   border-radius: 5px;
@@ -152,7 +152,7 @@ const GoToEducationButton = styled.button`
   align-self: center;
 
   &:hover {
-    background-color: #e03e00;
+    background-color: rgb(115, 107, 223);
   }
 `;
 
