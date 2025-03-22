@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -10,6 +10,22 @@ const Contact = ({ visible, onClose }) => {
   const handlePrint = () => {
     iframeRef.current.contentWindow.print(); // Acionando a impressão no iframe
   };
+
+  useEffect( () => {
+    const handleKeyUp = (e) => {
+      const key = e.key || e.keyCode;
+      const isKeyPressed = key === "Escape" || key === 27;
+
+      if (isKeyPressed && visible) {
+        onClose();
+      };
+    };
+
+    document.addEventListener("keyup", handleKeyUp);
+    return () => {
+      document.removeEventListener("keyup", handleKeyUp);
+    };
+  }, [ visible, onClose ]);
 
   return (
     <SlidingContact $visible={visible}>

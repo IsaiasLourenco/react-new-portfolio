@@ -17,14 +17,19 @@ const Home = () => {
   const [showExperiencia, setShowExperiencia] = useState(false); // Estado para o componente de experiência
   const [showHabilidades, setShowHabilidades] = useState(false);
 
-  const handleProjectsClick = () => {
-    setShowProjects(true); // Exibe a seção de projetos
-  };
-
   const handleArrowClick = () => {
     // Rola suavemente até a seção "Sobre Mim"
     document.getElementById("sobre-mim").scrollIntoView({ behavior: "smooth" });
   };
+
+  const handleProjectsClick = () => {
+    setShowProjects(true); // Exibe a seção de projetos
+  };
+
+  const handleCloseProjects = () => {
+    setShowProjects(false);
+  };
+
 
   const handleContactClick = () => {
     setShowContact(true); // Exibe o contato
@@ -52,9 +57,9 @@ const Home = () => {
 
   return (
     <HomeContainer>
-      
-        {/* <ThemeToggler /> */}
-      
+
+      {/* <ThemeToggler /> */}
+
       <Section>
         <TechIconsLeft>
           <FontAwesomeIcon icon={faHtml5} size="3x" color="#E34F26" />
@@ -84,12 +89,9 @@ const Home = () => {
       </Section>
 
       <About />
-      <SlidingProjects visible={showProjects}>
-        <CloseButton onClick={() => setShowProjects(false)}>×</CloseButton>
-        <Projects />
-      </SlidingProjects>
 
       {/* Adicionando o componente Contact com controle de visibilidade */}
+      <Projects visible={showProjects} onClose={handleCloseProjects} />
       <Contact visible={showContact} onClose={handleCloseContact} />
       <Experiencia visible={showExperiencia} onClose={handleCloseExperiencia} /> {/* Novo componente de experiência */}
       <Habilidades visible={showHabilidades} onClose={handleCloseHabilidades} />
@@ -151,7 +153,7 @@ const Arrow = styled.div`
     bottom: 20px;
     width: 80px;
     height: 40px;
-    left: 55%;
+    left: 50%;
     transform: translateX(-50%);
   }
 
@@ -171,6 +173,7 @@ const Section = styled.div`
     width: 100%; /* Garante que cobre toda a largura */
     padding-top: 20px;
     top: -50px;
+}
 `;
 
 const TextContainer = styled.div`
@@ -272,22 +275,6 @@ const TechIconsRight = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-`;
-
-const SlidingProjects = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 100%; /* Pode ajustar para uma largura menor, como 80% */
-  max-width: 700px;
-  background-color: #222;
-  color: white;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-  transform: ${(props) => (props.visible ? "translateX(0)" : "translateX(100%)")};
-  transition: transform 0.5s ease-in-out;
-  z-index: 1000;
-  overflow-y: auto; /* Para rolagem interna, caso necessário */
 `;
 
 const CloseButton = styled.button`

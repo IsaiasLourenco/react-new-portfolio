@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const Experiencia = ({ visible, onClose }) => {
+
+  useEffect(() => {
+    const handleKeyUp = (e) => {
+      const key = e.key || e.keyCode;
+      const isKeyPressed = key === "Escape" || key === 27;
+
+      if (isKeyPressed && visible) {
+        onClose();
+      };
+    };
+
+    document.addEventListener("keyup", handleKeyUp);
+    return () => {
+      document.removeEventListener("keyup", handleKeyUp);
+    };
+  }, [visible, onClose]);
+
   return (
     <SlidingExperiencia $visible={visible}>
       <CloseButton onClick={onClose}>×</CloseButton>

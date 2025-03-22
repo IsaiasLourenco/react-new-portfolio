@@ -15,13 +15,18 @@ const About = () => {
               Estou comprometido em aprimorar minhas habilidades técnicas e adquirir experiência prática no desenvolvimento de soluções web. Determinado a me destacar na criação de interfaces visuais intuitivas e no desenvolvimento de sistemas robustos e escaláveis no FrontEnd e no BackEnd.
               Busco oportunidades para aplicar meu conhecimento e paixão pela tecnologia em projetos desafiadores e contribuir para o sucesso da equipe.<br></br><br></br>
             </Paragraph>
-             <EmailLink href="mailto:isaiaslourenco2020@gmail.com?subject=Contato%20via%20Portfolio&body=Olá%20Isaias,%20gostaria%20de%20entrar%20em%20contato..." title="Me envie um e-mail" >
-             📧 isaiaslourenco2020@gmail.com
+            <EmailLink href="mailto:isaiaslourenco2020@gmail.com?subject=Contato%20via%20Portfolio&body=Olá%20Isaias,%20gostaria%20de%20entrar%20em%20contato..." title="Me envie um e-mail" >
+              📧 isaiaslourenco2020@gmail.com
             </EmailLink>
           </Description>
-          <BackToHomeButton onClick={handleBackToHomeClick}>
-            ↑ Voltar
-          </BackToHomeButton>
+          <LadoAlado>
+            <GoToEducationButton>
+              ↓ Educação
+            </GoToEducationButton>
+            <BackToHomeButton onClick={handleBackToHomeClick}>
+              ↑ Voltar
+            </BackToHomeButton>
+          </LadoAlado>
         </TextContainer>
       </Content>
     </Section>
@@ -89,7 +94,7 @@ const Description = styled.p`
 
 const EmailLink = styled.a`
   display: block; /* Faz o link ocupar toda a largura disponível */
-  text-align: center; /* Centraliza o e-mail */
+  text-align: start; /* Centraliza o e-mail */
   color: #ffffee;
   text-decoration: none;
   font-weight: bold;
@@ -117,3 +122,31 @@ const BackToHomeButton = styled.button`
     background-color: #e03e00;
   }
 `;
+
+const GoToEducationButton = styled.button`
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  align-self: center;
+
+  &:hover {
+    background-color: #e03e00;
+  }
+`;
+
+const LadoAlado = styled.div `
+  display: flex;
+  gap: 20px;
+
+  @media (max-width: 480px){
+    justify-content: center;
+  }
+
+
+`

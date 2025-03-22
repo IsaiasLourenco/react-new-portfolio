@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs, faDocker, faGitSquare, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs, faDocker, faGitSquare, faGithub, faAngular } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const Habilidades = ({ visible, onClose }) => {
@@ -66,6 +66,12 @@ const Habilidades = ({ visible, onClose }) => {
       image: "./TS.png",
       color: "#0068AF",
     },
+    {
+      id: 11,
+      description: "Desenvolvedor habilidoso em Angular, especializado na criação de aplicações single-page (SPAs) escaláveis e dinâmicas. Proficiente em recursos avançados do framework, como componentes reutilizáveis, injeção de dependências, RxJS para programação reativa e gerenciamento de estado com NgRx. Experiente na integração com APIs RESTful, otimização de desempenho com lazy loading e testes com Jasmine/Karma. Comprometido em seguir boas práticas e criar interfaces modernas e responsivas, garantindo soluções robustas e de alta qualidade.",
+      image: "angularIcon",
+      color: "#E34F26",
+    },
   ];
 
   // Mapeamento de ícones
@@ -79,7 +85,24 @@ const Habilidades = ({ visible, onClose }) => {
     gitIcon: faGitSquare,
     dockerIcon: faDocker,
     databaseIcon: faDatabase,
+    angularIcon: faAngular,
   };
+
+    useEffect( () => {
+      const handleKeyUp = (e) => {
+        const key = e.key || e.keyCode;
+        const isKeyPressed = key === "Escape" || key === 27;
+  
+        if (isKeyPressed && visible) {
+          onClose();
+        };
+      };
+  
+      document.addEventListener("keyup", handleKeyUp);
+      return () => {
+        document.removeEventListener("keyup", handleKeyUp);
+      };
+    }, [ visible, onClose ]);
 
   return (
     <SlidingHabilidades $visible={visible} >
