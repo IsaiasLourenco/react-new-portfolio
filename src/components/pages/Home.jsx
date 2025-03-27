@@ -91,10 +91,10 @@ const Home = () => {
 
       <About />
 
-      {/* Adicionando o componente Contact com controle de visibilidade */}
+      {/* Adicionando componentes com controle de visibilidade */}
       <Projects visible={showProjects} onClose={handleCloseProjects} />
       <Contact visible={showContact} onClose={handleCloseContact} />
-      <Experiencia visible={showExperiencia} onClose={handleCloseExperiencia} /> {/* Novo componente de experiência */}
+      <Experiencia visible={showExperiencia} onClose={handleCloseExperiencia} />
       <Habilidades visible={showHabilidades} onClose={handleCloseHabilidades} />
     </HomeContainer>
   );

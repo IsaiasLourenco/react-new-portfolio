@@ -29,7 +29,7 @@ const Switch = styled.div`
   transition: background 0.4s;
   outline: none;
   user-select: none;
-  top: 100px;
+  top: 10px;
 `;
 
 const Icon = styled.span`
