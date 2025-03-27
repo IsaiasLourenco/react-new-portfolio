@@ -1,8 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import Education from "./Education";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 const About = () => {
+
+  const { theme } = useContext(ThemeContext);
   
   const handleBtnEducationClick = () => {
     // Rola suavemente até a seção "Educação"

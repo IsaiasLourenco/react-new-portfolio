@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, useTheme } from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs } from '@fortawesome/free-brands-svg-icons'; // FontAwesome
 import { faDatabase } from '@fortawesome/free-solid-svg-icons'; // Alteração aqui, ícone de banco de dados
@@ -8,10 +8,11 @@ import Projects from "./Projects";
 import Contact from "./Contato";
 import Experiencia from "./Experiencia";  // Importando o novo componente
 import Habilidades from "./Habilidades";
-import ThemeContext from "../context/ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 import ThemeToggler from "../ThemeToggler";
 
 const Home = () => {
+  const theme = useTheme();
   const [showProjects, setShowProjects] = useState(false);
   const [showContact, setShowContact] = useState(false); // Estado para o componente de contato
   const [showExperiencia, setShowExperiencia] = useState(false); // Estado para o componente de experiência
@@ -56,15 +57,15 @@ const Home = () => {
   };
 
   return (
-    <HomeContainer>
+    <HomeContainer theme={theme}>
 
-      {/* <ThemeToggler /> */}
+      <ThemeToggler />
 
       <Section>
         <TechIconsLeft>
-          <FontAwesomeIcon icon={faHtml5} size="3x" color="#E34F26" />
-          <FontAwesomeIcon icon={faCss3Alt} size="3x" color="#1572B6" />
-          <FontAwesomeIcon icon={faJs} size="3x" color="#F7DF1E" />
+          <FontAwesomeIcon icon={faHtml5} size="3x" color={theme.iconHtml} />
+          <FontAwesomeIcon icon={faCss3Alt} size="3x" color={theme.iconCss} />
+          <FontAwesomeIcon icon={faJs} size="3x" color={theme.iconJs} />
         </TechIconsLeft>
 
         <TextContainer>
@@ -76,15 +77,15 @@ const Home = () => {
             <CallToAction onClick={handleHabilidadesClick}>← Minhas Habilidades</CallToAction>
             <ContactButton onClick={handleExperienciaClick}>← Experiência Profissional</ContactButton>
           </ButtonsContainer>
-          <Arrow onClick={handleArrowClick}>
+          <Arrow onClick={handleArrowClick} theme={theme}>
             <span>Sobre Mim</span>
           </Arrow>
         </TextContainer>
 
         <TechIconsRight>
-          <FontAwesomeIcon icon={faReact} size="3x" color="#61DAFB" />
-          <FontAwesomeIcon icon={faNodeJs} size="3x" color="#8CC84B" />
-          <FontAwesomeIcon icon={faDatabase} size="3x" color="#306D8C" />
+          <FontAwesomeIcon icon={faReact} size="3x" color={theme.iconReact} />
+          <FontAwesomeIcon icon={faNodeJs} size="3x" color={theme.iconNode} />
+          <FontAwesomeIcon icon={faDatabase} size="3x" color={theme.iconDb} />
         </TechIconsRight>
       </Section>
 
@@ -108,6 +109,8 @@ const HomeContainer = styled.div`
   justify-content: center;
   width: 100%;
   height: 150%
+  background: ${({ theme }) => theme.background}; 
+  color: ${({ theme }) => theme.text};
 `;
 
 const bounce = keyframes`
@@ -129,6 +132,7 @@ const Arrow = styled.div`
   transform: translateX(-50%);
   width: 25px;
   height: 25px;
+  background-color: ${({ theme }) => theme.text}; 
   background: url(/seta_preta.png) no-repeat center;
   background-size: contain;
   animation: ${bounce} 0.8s infinite ease-in-out;
@@ -139,12 +143,13 @@ const Arrow = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: ${({ theme }) => theme.text};
   font-size: 14px;
   font-weight: bold;
 
   span {
     margin-top: 80px; /* Espaço entre o texto e a imagem da seta */
+    color: ${({ theme }) => theme.text};
   }
 
   cursor: pointer; /* Cursor de clique */
@@ -165,8 +170,8 @@ const Section = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(135deg, #1e90ff, #000);
-  color: white;
+  background: ${({ theme }) => theme.boxBackground};
+  color: ${({ theme }) => theme.text};
   text-align: center;
 
     @media (max-width: 480px) {
@@ -220,8 +225,8 @@ const ButtonsContainer = styled.div`
 `;
 
 const CallToAction = styled.button`
-  background-color: #ff4500;
-  color: white;
+  background: ${({ theme }) => theme.buttonBackground};
+  color: ${({ theme }) => theme.buttonText};
   border: none;
   padding: 15px 30px;
   font-size: 18px;
@@ -231,7 +236,8 @@ const CallToAction = styled.button`
   transition: background 0.3s;
   
   &:hover {
-    background-color: #e03e00;
+    background-color: ${({ theme }) => theme.buttonHover};
+    font-weight: bold;
   }
 
   @media (max-width: 480px) {
@@ -242,8 +248,8 @@ const CallToAction = styled.button`
 
 const ContactButton = styled.button`
   font-size: 18px;
-  color: #fff;
-  background: #ff4500;
+  color: ${({ theme }) => theme.buttonText};
+  background: ${({ theme }) => theme.buttonBackground};
   padding: 12px 24px;
   border: none;
   border-radius: 8px;
@@ -251,7 +257,8 @@ const ContactButton = styled.button`
   transition: background 0.3s ease;
 
   &:hover {
-    background: #ff6347;
+    background: ${({ theme }) => theme.buttonHover};
+    font-weight: bold;
   }
 
   @media (max-width: 480px) {
@@ -283,12 +290,12 @@ const CloseButton = styled.button`
   right: 20px;
   background: none;
   border: none;
-  color: #fff;
+  color: ${({ theme }) => theme.buttonText};
   font-size: 24px;
   cursor: pointer;
   z-index: 1100;
 
   &:hover {
-    color: #ff6347;
+    color: ${({ theme }) => theme.buttonHover};
   }
 `;

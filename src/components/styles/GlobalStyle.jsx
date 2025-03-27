@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    boxBackground: ${({ theme }) => theme.boxBackground};
     background: ${({ theme }) => theme.background};
     color: ${({ theme }) => theme.text};
     font-family: 'Arial', sans-serif;

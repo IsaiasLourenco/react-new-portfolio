@@ -1,5 +1,6 @@
 import { createContext } from "react";
 
-const ThemeContext = createContext();
-
-export default ThemeContext;
+export const ThemeContext = createContext({
+  theme: "light", // Tema padrão
+  toggleTheme: () => {}, // Função fictícia, será definida no Provider
+});
