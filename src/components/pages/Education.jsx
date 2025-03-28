@@ -1,10 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Education = () => {
-
+    const theme = useTheme();
     return (
-        <Section id="education">
+        <Section id="education" theme={theme}>
             <Title>Educação</Title>
             <EducationList>
                 <EducationItem>
@@ -63,8 +64,8 @@ const Section = styled.div`
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg,rgb(116, 111, 111),rgb(37, 34, 34)); /* Gradiente vermelho suave */
-  color: white;
+  background: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
 `;
 
 const Title = styled.h2`
@@ -72,11 +73,18 @@ const Title = styled.h2`
   margin-bottom: 40px;
   text-align: center;
   margin-top: 20px;
+  color: ${({ theme }) => theme.text};
 `;
 
 const EducationList = styled.div`
     margin: 0 20px; /* Adiciona margem lateral */
     padding: 0 40px;
+
+    @media (max-width: 480px){
+    justify-content: center;
+    margin: 0 -10px; /* Adiciona margem lateral */
+  }
+
 `;
 
 const EducationItem = styled.div`
@@ -86,24 +94,27 @@ const EducationItem = styled.div`
 const Year = styled.h3`
   font-size: 20px;
   font-weight: bold;
+  color: ${({ theme }) => theme.text};
 `;
 
 const Institution = styled.p`
   font-size: 16px;
   font-style: italic;
-  color: #bbb;
+  color: ${({ theme }) => theme.text};
 `;
 
 const Course = styled.h4`
   font-size: 20px;
   margin-top: 5px;
   font-weight: bold;
+  color: ${({ theme }) => theme.text};
 `;
 
 const Description = styled.p`
   font-size: 16px;
   margin-top: 10px;
   line-height: 1.5;
+  color: ${({ theme }) => theme.text};
 `;
 
 
@@ -111,16 +122,17 @@ const BackToHomeButton = styled.button`
   margin-top: -10px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #ff4500;
-  color: white;
+  background-color: ${({ theme }) => theme.buttonBackground};
+  color: ${({ theme }) => theme.text};
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
   align-self: center;
+  color: ${({ theme }) => theme.text};
 
   &:hover {
-    background-color: #e03e00;
+    background-color: ${({ theme }) => theme.buttonHover};
   }
 `;
 
@@ -128,16 +140,17 @@ const BackToAbout = styled.button`
   margin-top: -10px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #ff4500;
-  color: white;
+  background-color: ${({ theme }) => theme.buttonBackground};
+  c: ${({ theme }) => theme.text};
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
   align-self: center;
+  color: ${({ theme }) => theme.text};
 
   &:hover {
-    background-color: #e03e00;
+    background-color: ${({ theme }) => theme.buttonHover};
   }
 `;
 

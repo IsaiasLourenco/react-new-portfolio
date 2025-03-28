@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Experiencia = ({ visible, onClose }) => {
-
+  const theme = useTheme();
   useEffect(() => {
     const handleKeyUp = (e) => {
       const key = e.key || e.keyCode;
@@ -20,7 +21,7 @@ const Experiencia = ({ visible, onClose }) => {
   }, [visible, onClose]);
 
   return (
-    <SlidingExperiencia $visible={visible}>
+    <SlidingExperiencia $visible={visible} theme={theme}>
       <CloseButton onClick={onClose}>×</CloseButton>
       <Title>Experiência Profissional</Title>
       <ExperienceList>
@@ -84,8 +85,8 @@ const SlidingExperiencia = styled.div`
   height: 100%;
   width: 100%;
   max-width: 700px;
-  background-color: #222;
-  color: white;
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
   box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
   transform: ${(props) => (props.$visible ? "translateX(0)" : "translateX(-100%)")};
   transition: transform 0.5s ease-in-out;
@@ -100,12 +101,12 @@ const CloseButton = styled.button`
   font-size: 24px;
   background: none;
   border: none;
-  color: white;
+  color: ${({ theme }) => theme.text};
   cursor: pointer;
   z-index: 1100;
 
   &:hover {
-    color: #ff6347;
+    color: ${({ theme }) => theme.buttonHover};
   }
 `;
 
@@ -138,7 +139,7 @@ const Position = styled.h4`
 const Company = styled.p`
   font-size: 14px;
   font-style: italic;
-  color: #bbb;
+  color: ${({ theme }) => theme.text};
 `;
 
 const Description = styled.p`

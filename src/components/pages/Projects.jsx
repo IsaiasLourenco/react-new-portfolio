@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Projects = ({ visible, onClose }) => {
+  const theme = useTheme();
   const projectList = [
     {
       id: 1,
@@ -50,7 +52,7 @@ const Projects = ({ visible, onClose }) => {
   }, [visible, onClose]);
 
   return (
-    <SlidingProjects $visible={visible}>
+    <SlidingProjects $visible={visible} theme={theme} >
       <CloseButton onClick={onClose}>×</CloseButton>
       <ProjectsSection id="projects">
         <Title>Meus Projetos</Title>
@@ -80,8 +82,8 @@ const SlidingProjects = styled.div`
   height: 100%;
   width: 100%;
   max-width: 700px;
-  background-color: #222;
-  color: white;
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
   transform: ${(props) => (props.$visible ? "translateX(0)" : "translateX(100%)")};
   transition: transform 0.5s ease-in-out;
@@ -96,19 +98,19 @@ const CloseButton = styled.button`
   font-size: 24px;
   background: none;
   border: none;
-  color: white;
+  color: ${({ theme }) => theme.text};
   cursor: pointer;
   z-index: 1100;
 
   &:hover {
-    color: #ff6347;
+    color: ${({ theme }) => theme.buttonHover};
   }
 `;
 
 const ProjectsSection = styled.section`
   padding: 50px 20px;
-  background: linear-gradient(135deg, #000, #333);
-  color: white;
+  background: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
   text-align: center;
 `;
 
@@ -126,7 +128,7 @@ const Grid = styled.div`
 `;
 
 const Card = styled.div`
-  background-color: #222;
+  background-color: ${({ theme }) => theme.background};
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -156,20 +158,20 @@ const CardTitle = styled.h3`
 
 const Description = styled.p`
   font-size: 16px;
-  color: #ccc;
+  color: ${({ theme }) => theme.text};
   margin-bottom: 20px;
 `;
 
 const Button = styled.a`
   font-size: 16px;
-  color: white;
-  background: #ff4500;
+  color: ${({ theme }) => theme.text};
+  background: ${({ theme }) => theme.buttonBackground};
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
   transition: background 0.3s;
 
   &:hover {
-    background: #ff6347;
+    background: ${({ theme }) => theme.buttonHover};
   }
 `;

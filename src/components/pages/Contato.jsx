@@ -1,10 +1,12 @@
 import React, { useRef, useEffect } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faPrint, faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Contact = ({ visible, onClose }) => {
+  const theme = useTheme();
   const iframeRef = useRef(null); // Usando ref para manipular o iframe
 
   const handlePrint = () => {
@@ -28,7 +30,7 @@ const Contact = ({ visible, onClose }) => {
   }, [ visible, onClose ]);
 
   return (
-    <SlidingContact $visible={visible}>
+    <SlidingContact $visible={visible} theme={theme}>
       <CloseButton onClick={onClose}>×</CloseButton>
       <Title>Entre em Contato</Title>
       <SocialLinks>
@@ -74,8 +76,8 @@ const SlidingContact = styled.div`
   height: 100%;
   width: 100%;
   max-width: 700px;
-  background-color: #222;
-  color: white;
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
   transform: ${(props) => (props.$visible ? "translateX(0)" : "translateX(100%)")};
   transition: transform 0.5s ease-in-out;
@@ -98,7 +100,7 @@ const SocialLinks = styled.div`
 `;
 
 const SocialIcon = styled.a`
-  color: white;
+  color: ${({ theme }) => theme.text};
   text-decoration: none;
   font-size: 18px;
   border: 1px solid white;
@@ -108,7 +110,7 @@ const SocialIcon = styled.a`
 
   &:hover {
     background: white;
-    color: black;
+    color: ${({ theme }) => theme.invers};
   }
 `;
 
@@ -119,14 +121,14 @@ const CloseButton = styled.button`
   top: 20px;
   right: 20px;
   font-size: 24px;
-  background: none;
+  background: ${({ theme }) => theme.background};
   border: none;
-  color: white;
+  color: ${({ theme }) => theme.text};
   cursor: pointer;
   z-index: 1100;
 
   &:hover {
-    color: #ff6347;
+    color: ${({ theme }) => theme.buttonHover};
   }
 `;
 
@@ -144,29 +146,29 @@ const ActionsContainer = styled.div`
 `;
 
 const DownloadButton = styled.a`
-  color: white;
+  color: ${({ theme }) => theme.text};
   text-decoration: none;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #ff4500;
+  background-color: ${({ theme }) => theme.buttonBackground};
   border-radius: 5px;
   cursor: pointer;
 
   &:hover {
-    background-color: #ff6347;
+    background-color: ${({ theme }) => theme.buttonHover};
   }
 `;
 
 const PrintButton = styled.button`
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #17a2b8;
-  color: white;
+  background-color: ${({ theme }) => theme.printButton};
+  color: ${({ theme }) => theme.text};
   border: none;
   border-radius: 5px;
   cursor: pointer;
 
   &:hover {
-    background-color: #138496;
+    background-color: ${({ theme }) => theme.ptnBtnSobre};
   }
 `;

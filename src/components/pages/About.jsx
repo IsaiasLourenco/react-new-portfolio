@@ -95,6 +95,11 @@ const TextContainer = styled.div`
   max-width: 600px;
   display: flex;
   flex-direction: column;
+
+      @media (max-width: 480px){
+    justify-content: center;
+    margin: 0 25px; /* Adiciona margem lateral */
+
 `;
 
 const Title = styled.h2`

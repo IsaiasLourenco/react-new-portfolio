@@ -118,7 +118,7 @@ const BoxPraCima = styled.div`
   gap: 10px;
 
   @media (max-width: 480px){
-      margin-bottom: 250px;
+      margin-bottom: 100px;
       margin-left: 80px;
   }
 

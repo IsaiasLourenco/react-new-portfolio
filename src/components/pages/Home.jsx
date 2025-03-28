@@ -132,8 +132,7 @@ const Arrow = styled.div`
   transform: translateX(-50%);
   width: 25px;
   height: 25px;
-  background-color: ${({ theme }) => theme.text}; 
-  background: url(/seta_preta.png) no-repeat center;
+  background: url(${({ theme }) => theme.arrowIcon}) no-repeat center;
   background-size: contain;
   animation: ${bounce} 0.8s infinite ease-in-out;
   border: none;
