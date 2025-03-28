@@ -14,10 +14,14 @@ Projeto do meu novo portfólio constuído com base em tudo que aprendi depois de
 
 ## Linguagens/Ferramentas utilizadas
 
-- React ➡ por seu desempenho e experiência. Compilação e refresh mais rápido.
-- React-router-dom ➡ Navegação interna fácil e em Single Page Application - 'S.P.A.'
-- React styled-components ➡ CSS segregando arquivos e facilitando o entendimento e a  manutenção.
-- SplashScreen com animação toda feita em React na página inicial, antes da página principal.
+| Linguagem + Library/Tool  |                       Funcionalidade                                       |
+|---------------------------|----------------------------------------------------------------------------|
+| React + Vite              | Por seu desempenho e experiência. Compilação e refresh mais rápido.        |
+| React-router-dom          | Navegação interna fácil e em Single Page Application - S.P.A.              |
+| React styled-components   | CSS segregando arquivos e facilitando o entendimento e a manutenção.       |
+| React styled-components   | Para utilização do toggler, mudança do tema claro e escuro.                |
+| React-context             | Compartilhamento de dados, estados entre componentes e temas claro e escuro|
+| SplashScreen              | Banimação toda feita em React na página inicial, antes da página principal |
 
 ## Comandos para rodar o projeto em um computador local.
 
@@ -41,4 +45,4 @@ Projeto do meu novo portfólio constuído com base em tudo que aprendi depois de
 ✅ https://github.com/IsaiasLourenco<br>
 ✅ https://www.linkedin.com/in/isaias-lourenco/
 
-<img src="./public/newPortfolio.gif" alt="DeliveringAPIMarvel">
+<img src="./public/portfolioIsaias.gif" alt="Portfolio Deploy">

@@ -1,12 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import Education from "./Education";
-import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
 const About = () => {
 
-  const { theme } = useContext(ThemeContext);
+  const theme = useTheme();
   
   const handleBtnEducationClick = () => {
     // Rola suavemente até a seção "Educação"
@@ -14,16 +13,16 @@ const About = () => {
   };
   
   return (
-    <Section id="sobre-mim">
+    <Section id="sobre-mim" theme={theme}>
       <Content>
         <ProfileImage src="/eu-pequeno.png" alt="Isaias Lourenço" />
         <TextContainer>
           <Title>Sobre Mim</Title>
           <Description>
             <Paragraph>
-              Trabalhei por 10 anos como programador Cobol e Visual Basic for Applications na IBM, seis meses como programador PL-SQL na New Soft Intelligence e seis meses como Quality Assurance na BairesDev.
-              Sou estudante dedicado de Análise e Desenvolvimento de Sistemas e cursando Dev em Dobro Desenvolvimento Full Stack desde janeiro de 2025. Possuo habilidades sólidas em HTML, CSS, JavaScript, SQL, Git e GitHub. Aprendendo Node.js, TypeScript e Express.
-              Estou comprometido em aprimorar minhas habilidades técnicas e adquirir experiência prática no desenvolvimento de soluções web. Determinado a me destacar na criação de interfaces visuais intuitivas e no desenvolvimento de sistemas robustos e escaláveis no FrontEnd e no BackEnd.
+              Trabalhei por 10 anos como programador Cobol e Visual Basic for Applications na IBM, seis meses como programador PL-SQL na New Soft Intelligence e seis meses como Quality Assurance na BairesDev.<br></br>
+              Sou estudante dedicado de Análise e Desenvolvimento de Sistemas e cursando Dev em Dobro Desenvolvimento Full Stack desde janeiro de 2025. Possuo habilidades sólidas em HTML, CSS, JavaScript, SQL, Git e GitHub. Aprendendo Node.js, TypeScript e Express.<br></br>
+              Estou comprometido em aprimorar minhas habilidades técnicas e adquirir experiência prática no desenvolvimento de soluções web. Determinado a me destacar na criação de interfaces visuais intuitivas e no desenvolvimento de sistemas robustos e escaláveis no FrontEnd e no BackEnd.<br></br>
               Busco oportunidades para aplicar meu conhecimento e paixão pela tecnologia em projetos desafiadores e contribuir para o sucesso da equipe.<br></br><br></br>
             </Paragraph>
             <EmailLink href="mailto:isaiaslourenco2020@gmail.com?subject=Contato%20via%20Portfolio&body=Olá%20Isaias,%20gostaria%20de%20entrar%20em%20contato..." title="Me envie um e-mail" >
@@ -58,7 +57,7 @@ const Section = styled.div`
   justify-content: center;
   align-items: center;
   gap: 50px;
-  background: linear-gradient(135deg, #ff7f7f, #660000); /* Gradiente vermelho suave */
+  background: ${({ theme }) => theme.backgroundSobre};
   color: white;
   width: 100%;
   min-height: 100vh;
@@ -85,11 +84,11 @@ const ProfileImage = styled.img`
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #fff;
+  border: 4px solid ${({ theme }) => theme.text};
 `;
 
 const Paragraph = styled.p`
-  margin-bottom: 16px; /* Ajuste para espaço entre os parágrafos */
+  margin-bottom: 16px;
 `;
 
 const TextContainer = styled.div`
@@ -102,26 +101,27 @@ const Title = styled.h2`
   margin-top: 50px;
   font-size: 32px;
   margin-bottom: 16px;
+  color: ${({ theme }) => theme.text};
   `;
   
   const Description = styled.p`
   margin-top: 50px;
   font-size: 18px;
   line-height: 1.6;
-  color: #ccc;
-  text-align: justify; /* Justificando o texto */
+  color: ${({ theme }) => theme.text};
+  text-align: justify;
 `;
 
 const EmailLink = styled.a`
   display: block; /* Faz o link ocupar toda a largura disponível */
   text-align: start; /* Centraliza o e-mail */
-  color: #ffffee;
+  color: ${({ theme }) => theme.text};
   text-decoration: none;
   font-weight: bold;
-  margin-top: 10px; /* Espaço acima do e-mail */
+  margin-top: 10px; 
 
   &:hover {
-    color:rgb(85, 78, 192);
+    color: ${({ theme }) => theme.txtSobreHover};
     text-decoration: underline;
   }
 `;
@@ -130,8 +130,9 @@ const BackToHomeButton = styled.button`
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #1772FF;
-  color: white;
+  background-color: ${({ theme }) => theme.btnSobre};
+  color: ${({ theme }) => theme.text};
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -139,7 +140,7 @@ const BackToHomeButton = styled.button`
   align-self: center;
 
   &:hover {
-    background-color: rgb(115, 107, 223);
+    background-color: ${({ theme }) => theme.btnSobreHover};
   }
 `;
 
@@ -147,8 +148,9 @@ const GoToEducationButton = styled.button`
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #1772FF;
-  color: white;
+  background-color: ${({ theme }) => theme.btnSobre};
+  color: ${({ theme }) => theme.text};
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -156,7 +158,7 @@ const GoToEducationButton = styled.button`
   align-self: center;
 
   &:hover {
-    background-color: rgb(115, 107, 223);
+    background-color: ${({ theme }) => theme.btnSobreHover};
   }
 `;
 

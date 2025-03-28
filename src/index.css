@@ -11,6 +11,10 @@ body {
   padding: 0;
 }
 
+.coco {
+  background-color: #1050b1;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 cards por linha */

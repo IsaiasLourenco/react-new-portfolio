@@ -5,6 +5,10 @@ export const lightTheme = {
   buttonBackground: "#ffcc00",    // Fundo do botão
   buttonText: "#333",             // Texto escuro no botão
   buttonHover: "#ffb700",  
+  backgroundSobre: "linear-gradient(135deg, #ffb700, #fff)",
+  txtSobreHover: "rgb(192, 78, 158)",
+  btnSobre: "rgb(85, 181, 207)",
+  btnSobreHover: "rgb(158, 218, 235)",
   iconHtml: "#b33f1e",       // Hover do botão
   iconCss: "#073556",
   iconJs: "#a89715",
@@ -20,6 +24,10 @@ export const darkTheme = {
   buttonBackground: "#ff5000",    // Fundo do botão vermelho
   buttonText: "#fff",             // Texto branco no botão
   buttonHover: "#ff0000",         // Hover do botão
+  backgroundSobre: "linear-gradient(135deg, #ff7f7f, #660000)",
+  txtSobreHover: "rgb(85, 78, 192)",
+  btnSobre: "#1772FF",
+  btnSobreHover: "#1050b1",
   iconHtml: "#E34F26",
   iconCss: "#1572B6",
   iconJs: "#F7DF1E",
