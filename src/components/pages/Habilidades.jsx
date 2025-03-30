@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs, faDocker, faGitSquare, faGithub, faAngular } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs, faDocker, faGitSquare, faGithub, faAngular, faPhp, faJava, faVuejs } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 import React, { useEffect } from "react";
 import styled, { useTheme } from "styled-components";
@@ -74,6 +74,18 @@ const Habilidades = ({ visible, onClose }) => {
       image: "angularIcon",
       color: theme.iconAngular,
     },
+    {
+      id: 12,
+      description: "Desenvolvedor experiente e altamente qualificado em PHP, com quase 5 anos de prática na criação de soluções robustas e eficientes. Possui amplo domínio em acessar e manipular bancos de dados utilizando PDO, garantindo segurança e desempenho. Hábil na integração e implementação de funcionalidades avançadas com AJAX e JavaScript, competências desenvolvidas como extensão direta de sua expertise em PHP. Profundo conhecimento em criação de variáveis, manipulação de dados para frontend e desenvolvimento backend focado em resolver problemas complexos. Comprometido com a aplicação de boas práticas de codificação, manutenção de códigos limpos e escaláveis, e entrega de soluções que agregam valor real aos projetos. Sempre focado em oferecer desempenho sólido, segurança e eficiência no desenvolvimento de sistemas modernos e personalizados.",
+      image: "phpIcon",
+      color: theme.iconPhp,
+    },
+    {
+      id: 13,
+      description: "Desenvolvedor altamente qualificado em Java, com sólida experiência no desenvolvimento de soluções backend robustas e escaláveis. Proficiente na criação e gerenciamento de APIs RESTful, integração com bancos de dados utilizando JPA/Hibernate e aplicação de conceitos avançados de orientação a objetos. Domínio de frameworks amplamente utilizados, como Spring Boot, para a construção de microsserviços e sistemas complexos. Experiência em implementação de padrões de design, manipulação de transações, segurança de aplicações e otimização de desempenho. Comprometido com a entrega de soluções limpas, eficientes e de alta qualidade, mantendo as melhores práticas de codificação e foco na escalabilidade e manutenção de sistemas.",
+      image: "javaIcon",
+      color: theme.iconJava,
+    },
   ];
 
   // Mapeamento de ícones
@@ -88,6 +100,9 @@ const Habilidades = ({ visible, onClose }) => {
     dockerIcon: faDocker,
     databaseIcon: faDatabase,
     angularIcon: faAngular,
+    phpIcon: faPhp,
+    javaIcon: faJava,
+    vueIcon: faVuejs,
   };
 
     useEffect( () => {
