@@ -37,7 +37,7 @@ const Projects = ({ visible, onClose }) => {
       id: 5,
       title: "API CEP Consume - Utilizando React",
       description: "Projeto de consumo de API do site dos correios, que está pronto para ser aplicado em outros projetos maiores, para busca de cep's de todo o Brasil. Projeto Inicial em JavaScript, atualizado para React, mas o de JS tem funcionalidades mais robustas, como uso de máscaras para validar o campo, busca de CEP's inválidos e inexistentes com tratamento de erros e volta para o campo CEP automática.",
-      image: "/cep.gif",
+      image: "/CEP.gif",
       link: "https://isaiaslourenco.github.io/consulta-cep/",
     },
     {
