@@ -17,14 +17,14 @@ const Projects = ({ visible, onClose }) => {
       title: "Consumo API Pokédex",
       description: "Aplicação web para buscar detalhes de Pokémons e mostrar detalhes, contraste em tema claro e escuro.",
       image: "/pokemonApi.gif",
-      link: "https://pokedex-2uarb7f2z-isaias-lourencos-projects.vercel.app/",
+      link: "https://isaiaslourenco-pokedex.vercel.app/",
     },
     {
       id: 3,
       title: "Marvel API consume - Personagens dos HQ's",
       description: "Consumo de API busca direto do site oficial da Marvel todos os personagens dos quadrinhos desde a década de 60.",
       image: "/marvelAPI.gif",
-      link: "https://marvel-497cvyj5k-isaias-lourencos-projects.vercel.app/",
+      link: "https://isaiaslourenco-api-marvel.vercel.app/",
     },
     {
       id: 4,
@@ -32,6 +32,20 @@ const Projects = ({ visible, onClose }) => {
       description: "Busca do perfil de usuários do GitHub com seus repositórios e todas as particularidades de cada repo.",
       image: "/apigithubresult.gif",
       link: "https://isaiaslourenco.github.io/api-github/",
+    },
+    {
+      id: 5,
+      title: "API CEP Consume - Utilizando React",
+      description: "Projeto de consumo de API do site dos correios, que está pronto para ser aplicado em outros projetos maiores, para busca de cep's de todo o Brasil. Projeto Inicial em JavaScript, atualizado para React, mas o de JS tem funcionalidades mais robustas, como uso de máscaras para validar o campo, busca de CEP's inválidos e inexistentes com tratamento de erros e volta para o campo CEP automática.",
+      image: "/cep.gif",
+      link: "https://isaiaslourenco.github.io/consulta-cep/",
+    },
+    {
+      id: 6,
+      title: "Portfólio - Isaias Lourenço",
+      description: "Projeto Portfolio para apresentar minhas experiências e habilidades, além do resumo Educacional, feito em React com tecnologias como Route, Hooks, Styled-Components e um Splash Screen inicial para um toque especial.",
+      image: "/portfolioIsaias.gif",
+      link: "https://isaiaslourenco-portfolio.vercel.app/",
     },
   ];
 
