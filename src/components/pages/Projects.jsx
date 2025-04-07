@@ -47,6 +47,13 @@ const Projects = ({ visible, onClose }) => {
       image: "/portfolioIsaias.gif",
       link: "https://isaiaslourenco-portfolio.vercel.app/",
     },
+    {
+      id: 7,
+      title: "Restaurante",
+      description: "Projeto feito em HTML, CSS, Bootstrap, JavaScript, AJAX, PHP e MySQL para Restaurantes. Site auto gerenciável pelo próprio sistema, com cardápio, fotos e mensagens de clientes dinâmicas gerenciadas pelo sistema. Reserva de mesas, controle total de estoque e fluxo de caixa, aviso para clientes via e-mail e whatsapp, relatórios gerenciáveis de todas as funcionalidades do sistema. Obs. Site/Sistema não está online, em breve novidades.",
+      image: "/restaurante.gif",
+      link: "https://isaiaslourenco.github.io/restaurante/",
+    },
   ];
 
   useEffect(() => {
