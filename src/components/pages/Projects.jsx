@@ -10,7 +10,7 @@ const Projects = ({ visible, onClose }) => {
       title: "Site da empresa Vetor256.",
       description: "Empresa de tecnologia. Desenvolvimento de softwares comerciais e site.",
       image: "/vetor256.gif",
-      link: "https://isaiaslourenco.github.io/vetor256/",
+      link: "https://vetor256.com",
     },
     {
       id: 2,
@@ -52,7 +52,14 @@ const Projects = ({ visible, onClose }) => {
       title: "Restaurante",
       description: "Projeto feito em HTML, CSS, Bootstrap, JavaScript, AJAX, PHP e MySQL para Restaurantes. Site auto gerenciável pelo próprio sistema, com cardápio, fotos e mensagens de clientes dinâmicas gerenciadas pelo sistema. Reserva de mesas, controle total de estoque e fluxo de caixa, aviso para clientes via e-mail e whatsapp, relatórios gerenciáveis de todas as funcionalidades do sistema. Obs. Site/Sistema não está online, em breve novidades.",
       image: "/restaurante.gif",
-      link: "https://isaiaslourenco.github.io/restaurante/",
+      link: "https://restaurante.vetor256.com/",
+    },
+    {
+      id: 8,
+      title: "Sistema Gerenciamento de Vendas - PDV",
+      description: "Sistema de gerenciamento de vendas (PDV) utilizando HTML, CSS, Bootstrap, JavaScript, AJAX, PHP e MySQL, voltado para comércios que necessitam de um ponto de venda eficiente, como supermercados, lanchonetes, beers, adegas e lojas de diversos segmentos. O sistema permite controle de estoque, gestão de fluxo de caixa, emissão de relatórios gerenciáveis e integração com e-mail e WhatsApp para avisos automáticos. Além disso, oferece um painel intuitivo para acompanhamento das métricas do negócio em tempo real, proporcionando praticidade e otimização na administração comercial.",
+      image: "/pdv.gif",
+      link: "https://pdv.vetor256.com/",
     },
   ];
 
