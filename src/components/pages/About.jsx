@@ -6,12 +6,12 @@ import { ThemeContext } from "../context/ThemeContext";
 const About = () => {
 
   const theme = useTheme();
-  
+
   const handleBtnEducationClick = () => {
     // Rola suavemente até a seção "Educação"
     document.getElementById("education").scrollIntoView({ behavior: "smooth" });
   };
-  
+
   return (
     <Section id="sobre-mim" theme={theme}>
       <Content>
@@ -20,10 +20,9 @@ const About = () => {
           <Title>Sobre Mim</Title>
           <Description>
             <Paragraph>
-              Trabalhei por 10 anos como programador Cobol e Visual Basic for Applications na IBM, seis meses como programador PL-SQL na New Soft Intelligence e seis meses como Quality Assurance na BairesDev.<br></br>
-              Sou estudante dedicado de Análise e Desenvolvimento de Sistemas e cursando Dev em Dobro Desenvolvimento Full Stack desde janeiro de 2025. Possuo habilidades sólidas em HTML, CSS, JavaScript, SQL, Git e GitHub. Aprendendo Node.js, TypeScript e Express.<br></br>
-              Estou comprometido em aprimorar minhas habilidades técnicas e adquirir experiência prática no desenvolvimento de soluções web. Determinado a me destacar na criação de interfaces visuais intuitivas e no desenvolvimento de sistemas robustos e escaláveis no FrontEnd e no BackEnd.<br></br>
-              Busco oportunidades para aplicar meu conhecimento e paixão pela tecnologia em projetos desafiadores e contribuir para o sucesso da equipe.<br></br><br></br>
+              Com mais de 10 anos de experiência em programação Cobol e VBA na IBM, além de atuações como desenvolvedor PL-SQL na New Soft Intelligence e Quality Assurance na BairesDev, construí uma base técnica sólida e versátil.
+              Sou apaixonado por tecnologia e atualmente me especializo em desenvolvimento Full Stack. Tenho habilidades avançadas em PHP e Ajax, além de domínio em HTML, CSS, JavaScript, SQL, Git e GitHub. Estou aprimorando meu conhecimento em Node.js, TypeScript e Express, sempre buscando expandir minhas competências.
+              Meu compromisso é criar soluções eficientes e escaláveis, tanto no Frontend quanto no Backend. Busco oportunidades que me permitam aplicar minhas habilidades em projetos desafiadores e contribuir para o sucesso da equipe com dedicação e inovação.
             </Paragraph>
             <EmailLink href="mailto:isaiaslourenco2020@gmail.com?subject=Contato%20via%20Portfolio&body=Olá%20Isaias,%20gostaria%20de%20entrar%20em%20contato..." title="Me envie um e-mail" >
               📧 isaiaslourenco2020@gmail.com
@@ -108,8 +107,8 @@ const Title = styled.h2`
   margin-bottom: 16px;
   color: ${({ theme }) => theme.text};
   `;
-  
-  const Description = styled.p`
+
+const Description = styled.p`
   margin-top: 50px;
   font-size: 18px;
   line-height: 1.6;
@@ -167,7 +166,7 @@ const GoToEducationButton = styled.button`
   }
 `;
 
-const LadoAlado = styled.div `
+const LadoAlado = styled.div`
   display: flex;
   gap: 20px;
 
