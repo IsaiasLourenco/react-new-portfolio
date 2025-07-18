@@ -52,7 +52,15 @@ const Experiencia = ({ visible, onClose }) => {
           <Position>Full Stack Developer</Position>
           <Company>Vetor256</Company>
           <Description>
-            Por conta da minha paixão por Tecnologia da Informação, fundei a --Vetor256.--, projeto antigo onde trabalho para automatizar o comércio da minha cidade, usando HTML5, CSS3, JavaScript, Bootstrap, AJAX e PHP. Selenium para os testes unitários, de integração e de regressão.
+            - Desenvolvimento de sistemas web utilizando PHP com o framework Laravel, seguindo boas práticas de arquitetura MVC para garantir código limpo e escalável.
+            - Criação de interfaces responsivas com HTML, CSS e JavaScript, garantindo uma experiência intuitiva e otimizada para o usuário.
+            - Utilização de JQuery e Ajax para implementar funcionalidades dinâmicas e interativas nas aplicações front-end.
+            - Construção e integração de APIs RESTful, conectando sistemas e serviços de forma segura e eficiente.
+            - Modelagem, manutenção e otimização de banco de dados MySQL, focando em performance e confiabilidade.
+            - Uso de Docker para padronização de ambientes de desenvolvimento e deploy contínuo.
+            - Colaboração em projetos inovadores, propondo melhorias técnicas com foco em qualidade, segurança e escalabilidade.
+            - Participação em reuniões técnicas e revisões de código, contribuindo ativamente para decisões arquiteturais.
+            - Estudo e aplicação de tecnologias complementares como AWS, React e WordPress, em alinhamento com as metas estratégicas da empresa.
           </Description>
         </Experience>
         <Experience>
