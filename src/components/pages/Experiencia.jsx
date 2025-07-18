@@ -52,14 +52,14 @@ const Experiencia = ({ visible, onClose }) => {
           <Position>Full Stack Developer</Position>
           <Company>Vetor256</Company>
           <Description>
-            - Desenvolvimento de sistemas web utilizando PHP com o framework Laravel, seguindo boas práticas de arquitetura MVC para garantir código limpo e escalável.
-            - Criação de interfaces responsivas com HTML, CSS e JavaScript, garantindo uma experiência intuitiva e otimizada para o usuário.
-            - Utilização de JQuery e Ajax para implementar funcionalidades dinâmicas e interativas nas aplicações front-end.
-            - Construção e integração de APIs RESTful, conectando sistemas e serviços de forma segura e eficiente.
-            - Modelagem, manutenção e otimização de banco de dados MySQL, focando em performance e confiabilidade.
-            - Uso de Docker para padronização de ambientes de desenvolvimento e deploy contínuo.
-            - Colaboração em projetos inovadores, propondo melhorias técnicas com foco em qualidade, segurança e escalabilidade.
-            - Participação em reuniões técnicas e revisões de código, contribuindo ativamente para decisões arquiteturais.
+            - Desenvolvimento de sistemas web utilizando PHP com o framework Laravel, seguindo boas práticas de arquitetura MVC para garantir código limpo e escalável.<br></br>
+            - Criação de interfaces responsivas com HTML, CSS e JavaScript, garantindo uma experiência intuitiva e otimizada para o usuário.<br></br>
+            - Utilização de JQuery e Ajax para implementar funcionalidades dinâmicas e interativas nas aplicações front-end.<br></br>
+            - Construção e integração de APIs RESTful, conectando sistemas e serviços de forma segura e eficiente.<br></br>
+            - Modelagem, manutenção e otimização de banco de dados MySQL, focando em performance e confiabilidade.<br></br>
+            - Uso de Docker para padronização de ambientes de desenvolvimento e deploy contínuo.<br></br>
+            - Colaboração em projetos inovadores, propondo melhorias técnicas com foco em qualidade, segurança e escalabilidade.<br></br>
+            - Participação em reuniões técnicas e revisões de código, contribuindo ativamente para decisões arquiteturais.<br></br>
             - Estudo e aplicação de tecnologias complementares como AWS, React e WordPress, em alinhamento com as metas estratégicas da empresa.
           </Description>
         </Experience>
