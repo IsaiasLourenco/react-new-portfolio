@@ -4,7 +4,7 @@ Projeto do meu novo portfólio constuído com base em tudo que aprendi depois de
 
 ## Funcionalidades do Projeto
 
-- O Projeto se inicia com uma Splash Screen de 10 minutos, com apresentação e boas vindas; 
+- O Projeto se inicia com uma Splash Screen de 10 segundos, com apresentação e boas vindas; 
 - A Página inicial apresenta trê botões centrais e uma seta apontando para baixo "Sobre Mim";
 - Ao clicar na seta, você vai para a seção Sobre Mim, que tem um pequeno resumo profisional, uma síntese de todos os trabalhos que fiz, o contato via e-mail, ao clicar no link você pode acessar seu Gerenciador de e-mail e me mandar uma mensagem, e uma seta para voltar à Home;
 - Botão "Veja Meus Projetos", onde você pode acessar meus Projetos mais imortantes até o momento;
