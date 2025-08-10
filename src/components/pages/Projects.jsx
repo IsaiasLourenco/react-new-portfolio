@@ -61,6 +61,20 @@ const Projects = ({ visible, onClose }) => {
       image: "/pdv.gif",
       link: "https://pdv.vetor256.com/",
     },
+    {
+      id: 9,
+      title: "Site Estático - Padoca",
+      description: "Site de apresentação da sua Padaria, Lanchonete, Restaurante, Supermercado, Beers, Adegas e Lojas, utilizando HTML, CSS e JavaScript, voltado para comércios que necessitam de identidade visal na internet a fim de propagar seus negócios de forma eficiente. O site permite receber e-mail dos clientes automaticamente.",
+      image: "/padoca.gif",
+      link: "https://isaiaslourenco.github.io/padoca/",
+    },
+    {
+      id: 10,
+      title: "E-Commerce - Vetor256",
+      description: "Comércio eletrônico em desenvolvimento utilizando PHP e MySQL, focado em proporcionar uma plataforma robusta e intuitiva para vendas online. O sistema permite o gerenciamento completo de produtos, controle de estoque, carrinho de compras e integração com múltiplos métodos de pagamento. Além disso, oferece funcionalidades de gestão de pedidos, acompanhamento de status de envio, e emissão de relatórios detalhados. A estrutura foi projetada para proporcionar uma experiência de compra fluida e otimizada para o cliente, com foco na escalabilidade e segurança, garantindo o sucesso nas transações online.",
+      image: "/e-commerce.gif",
+      link: "https://e-commerce.vetor256.com/",
+    },
   ];
 
   useEffect(() => {
