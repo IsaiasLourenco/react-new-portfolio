@@ -71,9 +71,16 @@ const Projects = ({ visible, onClose }) => {
     {
       id: 10,
       title: "E-Commerce - Vetor256",
-      description: "Comércio eletrônico em desenvolvimento utilizando PHP e MySQL, focado em proporcionar uma plataforma robusta e intuitiva para vendas online. O sistema permite o gerenciamento completo de produtos, controle de estoque, carrinho de compras e integração com múltiplos métodos de pagamento. Além disso, oferece funcionalidades de gestão de pedidos, acompanhamento de status de envio, e emissão de relatórios detalhados. A estrutura foi projetada para proporcionar uma experiência de compra fluida e otimizada para o cliente, com foco na escalabilidade e segurança, garantindo o sucesso nas transações online.",
+      description: "Comércio eletrônico em desenvolvimento utilizando PHP e MySQL, focado em proporcionar uma plataforma robusta e intuitiva para vendas online. O sistema permite o gerenciamento completo de produtos, controle de estoque, carrinho de compras e integração com múltiplos métodos de pagamento. Além disso, oferece funcionalidades de gestão de pedidos, acompanhamento de status de envio, e emissão de relatórios detalhados. A estrutura foi projetada para proporcionar uma experiência de compra fluida e otimizada para o cliente, com foco na escalabilidade e segurança, garantindo o sucesso nas transações online. Este site encontra-se em fase de construção, podendo conter recursos temporariamente indisponíveis ou em teste.",
       image: "/e-commerce.gif",
       link: "https://e-commerce.vetor256.com/",
+    },
+    {
+      id: 11,
+      title: "Imobiliaria - Vetor256",
+      description: "A Imobiliária está em fase de desenvolvimento e conta com uma estrutura moderna utilizando PHP com arquitetura MVC, gerenciamento de dependências via Composer e banco de dados MySQL para armazenamento e manipulação das informações. O sistema foi projetado para oferecer segurança, escalabilidade e facilidade de manutenção, garantindo uma base sólida para futuras expansões e integrações.",
+      image: "/imobiliaria.gif",
+      link: "https://imobiliaria.vetor256.com/",
     },
   ];
 
