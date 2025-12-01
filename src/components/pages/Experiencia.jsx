@@ -48,7 +48,7 @@ const Experiencia = ({ visible, onClose }) => {
           </Description>
         </Experience>
         <Experience>
-          <Year>2021 - 2022</Year>
+          <Year>2021 - Presente</Year>
           <Position>Full Stack Developer</Position>
           <Company>Vetor256</Company>
           <Description>
@@ -60,7 +60,8 @@ const Experiencia = ({ visible, onClose }) => {
             - Uso de Docker para padronização de ambientes de desenvolvimento e deploy contínuo.<br></br>
             - Colaboração em projetos inovadores, propondo melhorias técnicas com foco em qualidade, segurança e escalabilidade.<br></br>
             - Participação em reuniões técnicas e revisões de código, contribuindo ativamente para decisões arquiteturais.<br></br>
-            - Estudo e aplicação de tecnologias complementares como AWS, React e WordPress, em alinhamento com as metas estratégicas da empresa.
+            - Estudo e aplicação de tecnologias complementares como AWS, React e WordPress, em alinhamento com as metas estratégicas da empresa.<br></br>
+             - Desenvolvimento de aplicativo mobile com React Native e Expo, integrando APIs RESTful e banco de dados MongoDB, com recursos nativos como geolocalização, mapas, câmera, galeria de imagens, notificações e WebView.
           </Description>
         </Experience>
         <Experience>

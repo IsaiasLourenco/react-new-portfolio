@@ -50,7 +50,7 @@ const Projects = ({ visible, onClose }) => {
     {
       id: 7,
       title: "Restaurante",
-      description: "Projeto feito em HTML, CSS, Bootstrap, JavaScript, AJAX, PHP e MySQL para Restaurantes. Site auto gerenciável pelo próprio sistema, com cardápio, fotos e mensagens de clientes dinâmicas gerenciadas pelo sistema. Reserva de mesas, controle total de estoque e fluxo de caixa, aviso para clientes via e-mail e whatsapp, relatórios gerenciáveis de todas as funcionalidades do sistema. Obs. Site/Sistema não está online, em breve novidades.",
+      description: "Projeto feito em HTML, CSS, Bootstrap, JavaScript, AJAX, PHP e MySQL para Restaurantes. Site auto gerenciável pelo próprio sistema, com cardápio, fotos e mensagens de clientes dinâmicas gerenciadas pelo sistema. Reserva de mesas, controle total de estoque e fluxo de caixa, aviso para clientes via e-mail e whatsapp, relatórios gerenciáveis de todas as funcionalidades do sistema.",
       image: "/restaurante.gif",
       link: "https://restaurante.vetor256.com/",
     },
@@ -81,6 +81,13 @@ const Projects = ({ visible, onClose }) => {
       description: "A Imobiliária está em fase de desenvolvimento e conta com uma estrutura moderna utilizando PHP com arquitetura MVC, gerenciamento de dependências via Composer e banco de dados MySQL para armazenamento e manipulação das informações. O sistema foi projetado para oferecer segurança, escalabilidade e facilidade de manutenção, garantindo uma base sólida para futuras expansões e integrações.",
       image: "/imobiliaria.gif",
       link: "https://imobiliaria.vetor256.com/",
+    },
+    {
+      id: 12,
+      title: "Delivery - Vetor256",
+      description: "Projeto feito em HTML, CSS, Bootstrap, JavaScript, AJAX, PHP e MySQL para Lanchonetes com delivery. Site auto gerenciável pelo próprio sistema, com cardápio, fotos e mensagens de clientes dinâmicas gerenciadas pelo sistema. Reserva de mesas, controle total de estoque e fluxo de caixa, aviso para clientes via e-mail e whatsapp, relatórios gerenciáveis de todas as funcionalidades do sistema. Total controle de entregas e moto boys, online e atualizável em tempo real.",
+      image: "/delivery.gif",
+      link: "https://delivery.vetor256.com/",
     },
   ];
 

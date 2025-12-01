@@ -86,6 +86,11 @@ const Habilidades = ({ visible, onClose }) => {
       image: "javaIcon",
       color: theme.iconJava,
     },
+    {
+      id: 14,
+      description: "Desenvolvedor habilidoso com experiência em React Native, especializado na criação de aplicativos móveis multiplataforma com interfaces modernas e responsivas. Proficiente no uso de componentes funcionais, hooks (como useState e useEffect) e no gerenciamento de estado com Context API ou Redux. Experiente na integração com APIs RESTful, armazenamento offline com AsyncStorage e utilização de recursos nativos como geolocalização, mapas, câmera e notificações. Comprometido em seguir boas práticas, otimizar desempenho e entregar experiências mobile fluidas e escaláveis..",
+      image: "./Nat.png",
+    },
   ];
 
   // Mapeamento de ícones
@@ -103,23 +108,24 @@ const Habilidades = ({ visible, onClose }) => {
     phpIcon: faPhp,
     javaIcon: faJava,
     vueIcon: faVuejs,
+    vueIcon: faVuejs,
   };
 
-    useEffect( () => {
-      const handleKeyUp = (e) => {
-        const key = e.key || e.keyCode;
-        const isKeyPressed = key === "Escape" || key === 27;
-  
-        if (isKeyPressed && visible) {
-          onClose();
-        };
+  useEffect(() => {
+    const handleKeyUp = (e) => {
+      const key = e.key || e.keyCode;
+      const isKeyPressed = key === "Escape" || key === 27;
+
+      if (isKeyPressed && visible) {
+        onClose();
       };
-  
-      document.addEventListener("keyup", handleKeyUp);
-      return () => {
-        document.removeEventListener("keyup", handleKeyUp);
-      };
-    }, [ visible, onClose ]);
+    };
+
+    document.addEventListener("keyup", handleKeyUp);
+    return () => {
+      document.removeEventListener("keyup", handleKeyUp);
+    };
+  }, [visible, onClose]);
 
   return (
     <SlidingHabilidades $visible={visible} theme={theme} >
@@ -130,15 +136,15 @@ const Habilidades = ({ visible, onClose }) => {
           {habilidades.map((habilidade) => (
             <Card key={habilidade.id}>
               {iconMap[habilidade.image] ? (
-                <FontAwesomeIcon  icon={iconMap[habilidade.image]} 
-                                  size="3x" 
-                                  color={habilidade.color}
-                                  style={{ width: '60px', height: '60px'}}                  
+                <FontAwesomeIcon icon={iconMap[habilidade.image]}
+                  size="3x"
+                  color={habilidade.color}
+                  style={{ width: '60px', height: '60px' }}
                 />
               ) : (
-                <Image  src={habilidade.image} 
-                        alt={habilidade.title} 
-                        style={{ width: '80px', height: '60px', marginBottom: '1px'}}
+                <Image src={habilidade.image}
+                  alt={habilidade.title}
+                  style={{ width: '80px', height: '60px', marginBottom: '1px' }}
                 />
               )}
               <Description>{habilidade.description}</Description>
