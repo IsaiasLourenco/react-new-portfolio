@@ -276,7 +276,7 @@ const TechIconsRight = styled.div`
   }
 
   @media (max-width: 600px) {
-    bottom: 30px;
+    bottom: 70px;
     right: auto;
     left: 50%;
     transform: translateX(-50%);
