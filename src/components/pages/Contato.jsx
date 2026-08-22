@@ -20,12 +20,25 @@ const Contact = ({ visible, onClose }) => {
   const [emailStatus, setEmailStatus] = useState("");
 
   const handleChange = (e) => {
+
     const { name, value } = e.target;
+
+    let valor = value;
+
+    if (name === 'telefone') {
+
+      valor = value.replace(/\D/g, '');
+
+      valor = valor.replace(/^(\d{2})(\d)/g, '($1) $2');
+      valor = valor.replace(/(\d{5})(\d)/, '$1-$2');
+
+    }
 
     setFormData({
       ...formData,
-      [name]: value
+      [name]: valor
     });
+
   };
 
   const handleSubmit = async (e) => {
@@ -182,6 +195,7 @@ const Contact = ({ visible, onClose }) => {
                 placeholder="Seu telefone (opcional)"
                 value={formData.telefone}
                 onChange={handleChange}
+                maxLength={15}
               />
 
               <TextArea
