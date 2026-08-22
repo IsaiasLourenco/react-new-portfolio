@@ -219,6 +219,7 @@ const CallToAction = styled.button`
   @media (max-width: 480px) {
     padding: 10px 16px;
     font-size: 12px;
+    font-weight: bold;
   }
 `;
 
@@ -242,6 +243,7 @@ const ContactButton = styled.button`
   @media (max-width: 480px) {
     padding: 10px 16px;
     font-size: 12px;
+    font-weight: bold;
   }
 `;
 
