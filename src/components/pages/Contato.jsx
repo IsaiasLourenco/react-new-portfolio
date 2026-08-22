@@ -19,6 +19,26 @@ const Contact = ({ visible, onClose }) => {
   const [sending, setSending] = useState(false);
   const [emailStatus, setEmailStatus] = useState("");
 
+  const limparCamposFormulario = () => {
+    setFormData({
+      nome: "",
+      email: "",
+      telefone: "",
+      mensagem: ""
+    });
+  };
+
+  const fecharFormulario = () => {
+    limparCamposFormulario();
+    setEmailStatus("");
+    setShowEmailForm(false);
+  };
+
+  const fecharContato = () => {
+    fecharFormulario();
+    onClose();
+  };
+
   const handleChange = (e) => {
 
     const { name, value } = e.target;
@@ -31,7 +51,6 @@ const Contact = ({ visible, onClose }) => {
 
       valor = valor.replace(/^(\d{2})(\d)/g, '($1) $2');
       valor = valor.replace(/(\d{5})(\d)/, '$1-$2');
-
     }
 
     setFormData({
@@ -64,12 +83,7 @@ const Contact = ({ visible, onClose }) => {
 
       setEmailStatus("Mensagem enviada com sucesso!");
 
-      setFormData({
-        nome: "",
-        email: "",
-        telefone: "",
-        mensagem: ""
-      });
+      limparCamposFormulario();
 
     } catch (error) {
       setEmailStatus(error.message || "Erro ao enviar a mensagem.");
@@ -90,7 +104,13 @@ const Contact = ({ visible, onClose }) => {
       const isKeyPressed = key === "Escape" || key === 27;
 
       if (isKeyPressed && visible) {
-        onClose();
+
+        if (showEmailForm) {
+          fecharFormulario();
+        } else {
+          fecharContato();
+        }
+
       }
     };
 
@@ -99,11 +119,11 @@ const Contact = ({ visible, onClose }) => {
     return () => {
       document.removeEventListener("keyup", handleKeyUp);
     };
-  }, [visible, onClose]);
+  }, [visible, showEmailForm]);
 
   return (
     <SlidingContact $visible={visible} theme={theme}>
-      <CloseButton onClick={onClose}>×</CloseButton>
+      <CloseButton onClick={fecharContato}>×</CloseButton>
 
       <Content>
         <Title>Entre em Contato</Title>
@@ -154,10 +174,7 @@ const Contact = ({ visible, onClose }) => {
         {showEmailForm && (
           <EmailFormContainer>
             <CloseEmailFormButton
-              onClick={() => {
-                setShowEmailForm(false);
-                setEmailStatus("");
-              }}
+              onClick={fecharFormulario}
               title="Fechar Formulário"
               type="button"
             >
