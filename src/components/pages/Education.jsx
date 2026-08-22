@@ -1,166 +1,172 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { useTheme } from "styled-components";
 import { ThemeContext } from "../context/ThemeContext";
 
-const Education = () => {
-    const theme = useTheme();
-    return (
-        <Section id="education" theme={theme}>
-            <Title>Educação</Title>
-            <EducationList>
-                <EducationItem>
-                    <Year>2023 - 2025</Year>
-                    <Institution>DevEmDobro</Institution>
-                    <Course>Full Stack Development</Course>
-                    <Description>
-                        FrontEnd → HTML, CSS, JavaScript, C.L.I., VSCode, Git, GitHub, Clean Code, Jest (Testes Automatizados), React, Redux, TypeScript.<br></br>
-                        BackEnd → PostGreSQL, Node.JS, HTML, Express.js, Prisma, Docker.
-                    </Description>
-                </EducationItem>
-                <EducationItem>
-                    <Year>2014 - 2015</Year>
-                    <Institution>UNYLEYA EDITORA E CURSOS S/A</Institution>
-                    <Course>Extensão Universitária em Sistemas de Informação com Ênfase em Logística.</Course>
-                    <Description>
-                        Abordagem integrativa entre tecnologia e gestão para otimizar processos logísticos. O curso abrange tópicos como uso de sistemas ERP, WMS e TMS para aprimorar a cadeia de suprimentos, planejamento estratégico de transporte e estoques, além de conceitos avançados de logística internacional e produção. Com foco em soluções modernas, explora ferramentas como Lean Logistics, Logística 4.0, Big Data e automação, capacitando profissionais a implementar tecnologias emergentes e metodologias eficientes, como o Lean Six Sigma, para melhorar processos e reduzir custos, proporcionando vantagem competitiva às empresas.
-                    </Description>
-                </EducationItem>
-                <EducationItem>
-                    <Year>2008 - 2011</Year>
-                    <Institution>Anhanguera Educacional - FAC III - Campinas/SP</Institution>
-                    <Course>Bacharel em Ciências da Computação.</Course>
-                    <Description>
-                        Curso voltado para formar profissionais com sólida base teórica e prática no desenvolvimento de sistemas, programação, inteligência artificial, banco de dados, redes de computadores e segurança cibernética. Ao longo da graduação, aprendemos a resolver problemas complexos por meio de algoritmos e tecnologia, desenvolvendo habilidades como pensamento lógico, inovação e aplicação de soluções computacionais em diversas áreas, como saúde, finanças, jogos e logística. Aprendemos entre outras coisas, Compiladores, Programação Orientada a Objetos e Administração de Banco de Dados.
-                    </Description>
-                </EducationItem>
-            </EducationList>
-            <LadoAlado>
-                <BackToAbout onClick={HandleBackToAbout}>
-                    ↑ Sobre Mim
-                </BackToAbout>
-                <BackToHomeButton onClick={handleBackToHomeClick}>
-                    ↑ Home
-                </BackToHomeButton>
-            </LadoAlado>
+const Education = ({ visible, onClose }) => {
+  const theme = useTheme();
 
-        </Section>
-    );
-};
+  useEffect(() => {
+    const handleKeyUp = (e) => {
+      const key = e.key || e.keyCode;
+      const isKeyPressed = key === "Escape" || key === 27;
 
-const HandleBackToAbout = () => {
-    document.getElementById("sobre-mim").scrollIntoView({ behavior: "smooth" });
-};
+      if (isKeyPressed && visible) {
+        onClose();
+      };
+    };
 
-const handleBackToHomeClick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    document.addEventListener("keyup", handleKeyUp);
+    return () => {
+      document.removeEventListener("keyup", handleKeyUp);
+    };
+
+  }, [visible, onClose]);
+
+  return (
+    <SlidingEducation $visible={visible} theme={theme}>
+      <CloseButton onClick={onClose}>×</CloseButton>
+      <Title>Educação</Title>
+      <EducationList>
+        <EducationItem>
+          <Year>2023 - 2025</Year>
+          <Institution>DevEmDobro</Institution>
+          <Course>Formação Full Stack Development</Course>
+          <Description>
+            Formação prática em desenvolvimento Full Stack, com foco na construção de aplicações modernas.
+            <br></br><br></br>
+            <strong>Front-end:</strong> HTML, CSS, JavaScript, React, Redux, TypeScript, Git, GitHub, Clean Code e testes automatizados com Jest.
+            <br></br><br></br>
+            <strong>Back-end:</strong> Node.js, Express, PostgreSQL, Prisma, Docker e desenvolvimento de APIs.
+          </Description>
+        </EducationItem>
+        <EducationItem>
+          <Year>2014 - 2015</Year>
+          <Institution>UNYLEYA EDITORA E CURSOS S/A</Institution>
+          <Course>Extensão Universitária em Sistemas de Informação com Ênfase em Logística</Course>
+          <Description>
+            Formação voltada à integração entre tecnologia e gestão aplicada à logística. O curso abordou sistemas e processos utilizados na cadeia de suprimentos, incluindo conceitos relacionados a ERP, WMS e TMS, planejamento de transportes e gestão de estoques.
+            <br></br><br></br>
+            Também foram explorados temas como automação, Big Data, Logística 4.0, Lean Logistics e metodologias de melhoria contínua, ampliando minha visão sobre o uso da tecnologia para otimização de processos e tomada de decisões.
+          </Description>
+        </EducationItem>
+        <EducationItem>
+          <Year>2008 - 2011</Year>
+          <Institution>Anhanguera Educacional - FAC III - Campinas/SP</Institution>
+          <Course>Bacharelado em Ciências da Computação</Course>
+          <Description>
+            Graduação com formação sólida nos fundamentos da computação, abrangendo programação, algoritmos, estruturas de dados, banco de dados, redes de computadores, engenharia de software e inteligência artificial.
+            <br></br><br></br>
+            Durante o curso, desenvolvi uma base teórica e prática para análise e resolução de problemas computacionais, com estudos em áreas como Programação Orientada a Objetos, compiladores e administração de banco de dados.
+          </Description>
+        </EducationItem>
+      </EducationList>
+    </SlidingEducation>
+  );
 };
 
 export default Education;
 
-const Section = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 100vh;
-  background: ${({ theme }) => theme.background};
-  color: ${({ theme }) => theme.text};
+const SlidingEducation = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 700px;
+    background: ${({ theme }) => theme.background};
+    color: ${({ theme }) => theme.text};
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+    transform: ${(props) => (props.$visible ? "translateX(0)" : "translateX(-100%)")};
+    transition: transform 0.5s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    @media (max-width: 768px) {
+        max-width: 100%;
+    }
+`;
+
+const CloseButton = styled.button`
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: ${({ theme }) => theme.text};
+    cursor: pointer;
+    z-index: 1100;
+    transition: color 0.3s ease;
+    &:hover {
+        color: ${({ theme }) => theme.buttonHover};
+    }
 `;
 
 const Title = styled.h2`
-  font-size: 32px;
-  margin-bottom: 40px;
-  text-align: center;
-  margin-top: 20px;
-  color: ${({ theme }) => theme.text};
+    font-size: 32px;
+    text-align: center;
+    margin: 30px 60px 40px;
+    color: ${({ theme }) => theme.text};
+
+    @media (max-width: 480px) {
+        font-size: 26px;
+        margin: 30px 50px 30px;
+    }
 `;
 
 const EducationList = styled.div`
-    margin: 0 20px; /* Adiciona margem lateral */
     padding: 0 40px;
-
-    @media (max-width: 480px){
-    justify-content: center;
-    margin: 0 -10px; /* Adiciona margem lateral */
-  }
-
+    box-sizing: border-box;
+    @media (max-width: 480px) {
+        padding: 0 25px;
+    }
 `;
 
 const EducationItem = styled.div`
-  margin-bottom: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    &:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
 `;
 
 const Year = styled.h3`
-  font-size: 20px;
-  font-weight: bold;
-  color: ${({ theme }) => theme.text};
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: ${({ theme }) => theme.text};
 `;
 
 const Institution = styled.p`
-  font-size: 16px;
-  font-style: italic;
-  color: ${({ theme }) => theme.text};
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 8px;
+    color: ${({ theme }) => theme.text};
 `;
 
 const Course = styled.h4`
-  font-size: 20px;
-  margin-top: 5px;
-  font-weight: bold;
-  color: ${({ theme }) => theme.text};
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: ${({ theme }) => theme.text};
+
+    @media (max-width: 480px) {
+        font-size: 18px;
+    }
 `;
 
 const Description = styled.p`
-  font-size: 16px;
-  margin-top: 10px;
-  line-height: 1.5;
-  color: ${({ theme }) => theme.text};
+    font-size: 16px;
+    margin-top: 10px;
+    line-height: 1.6;
+    color: ${({ theme }) => theme.text};
+    text-align: justify;
+    @media (max-width: 480px) {
+        font-size: 15px;
+        text-align: left;
+    }
 `;
-
-
-const BackToHomeButton = styled.button`
-  margin-top: -10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: ${({ theme }) => theme.buttonBackground};
-  color: ${({ theme }) => theme.text};
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  align-self: center;
-  color: ${({ theme }) => theme.text};
-
-  &:hover {
-    background-color: ${({ theme }) => theme.buttonHover};
-  }
-`;
-
-const BackToAbout = styled.button`
-  margin-top: -10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: ${({ theme }) => theme.buttonBackground};
-  c: ${({ theme }) => theme.text};
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  align-self: center;
-  color: ${({ theme }) => theme.text};
-
-  &:hover {
-    background-color: ${({ theme }) => theme.buttonHover};
-  }
-`;
-
-const LadoAlado = styled.div`
-  display: flex;
-  gap: 20px;
-
-  @media (max-width: 480px){
-    justify-content: center;
-  }
-
-
-`

@@ -7,85 +7,65 @@ const Projects = ({ visible, onClose }) => {
   const projectList = [
     {
       id: 1,
-      title: "Site da empresa Vetor256.",
-      description: "Empresa de tecnologia. Desenvolvimento de softwares comerciais e site.",
+      title: "Vetor256 — Tecnologia e Soluções Digitais",
+      description: "Site institucional desenvolvido para uma empresa de tecnologia, com foco em apresentação de serviços e soluções digitais. O projeto destaca desenvolvimento com JavaScript, HTML e CSS, com interface responsiva e adaptação estruturada para desktop, tablets e dispositivos móveis. Como evolução futura, o projeto pode receber uma área de abertura e acompanhamento de tickets para clientes e equipe técnica.",
       image: "/vetor256.gif",
       link: "https://vetor256.com",
     },
     {
       id: 2,
-      title: "Consumo API Pokédex",
-      description: "Aplicação web para buscar detalhes de Pokémons e mostrar detalhes, contraste em tema claro e escuro.",
+      title: "Pokédex — React + PokéAPI",
+      description: "Aplicação desenvolvida em React com consumo da PokéAPI, carregamento incremental de Pokémon, filtro por tipo, navegação entre listagem e detalhes e persistência do estado da aplicação com localStorage. Utiliza Hooks, Context API, React Router, Axios e Styled Components, além de tratamento de fallback para imagens indisponíveis.",
       image: "/pokemonApi.gif",
       link: "https://isaiaslourenco-pokedex.vercel.app/",
     },
     {
       id: 3,
-      title: "Marvel API consume - Personagens dos HQ's",
-      description: "Consumo de API busca direto do site oficial da Marvel todos os personagens dos quadrinhos desde a década de 60.",
+      title: "Marvel Characters — React",
+      description: "Aplicação desenvolvida em React, originalmente integrada à API oficial da Marvel. Após a indisponibilidade das credenciais de acesso, o projeto foi adaptado para utilizar dados simulados, preservando suas funcionalidades. Implementa carregamento incremental, navegação entre listagem e detalhes, persistência de estado, fallback de imagens e layout responsivo.",
       image: "/marvelAPI.gif",
       link: "https://isaiaslourenco-api-marvel.vercel.app/",
     },
     {
       id: 4,
-      title: "Git Profile API consume",
-      description: "Busca do perfil de usuários do GitHub com seus repositórios e todas as particularidades de cada repo.",
+      title: "GitHub Profile API — JavaScript",
+      description: "Aplicação desenvolvida em JavaScript para consulta e apresentação detalhada de perfis do GitHub utilizando Fetch API. Além dos dados do perfil e repositórios, apresenta seguidores, seguindo e os últimos eventos do usuário, incluindo repositório, commit, forks, stars, watchers e principal linguagem utilizada.",
       image: "/apigithubresult.gif",
       link: "https://isaiaslourenco.github.io/api-github/",
     },
     {
       id: 5,
-      title: "API CEP Consume - Utilizando React",
-      description: "Projeto de consumo de API do site dos correios, que está pronto para ser aplicado em outros projetos maiores, para busca de cep's de todo o Brasil. Projeto Inicial em JavaScript, atualizado para React, mas o de JS tem funcionalidades mais robustas, como uso de máscaras para validar o campo, busca de CEP's inválidos e inexistentes com tratamento de erros e volta para o campo CEP automática.",
+      title: "Consulta de CEP — JavaScript e React",
+      description: "Ferramenta reutilizável para consulta e preenchimento de endereços a partir do CEP, utilizada como base em diversos projetos. Desenvolvida inicialmente em JavaScript puro e posteriormente recriada em React, utilizando React Hook Form e React Query. Possui validação do CEP, tratamento de dados inválidos ou inexistentes e integração com a API ViaCEP.",
       image: "/CEP.gif",
-      link: "https://isaiaslourenco.github.io/consulta-cep/",
+      linkReact: "https://isaiaslournco-api-cep.vercel.app/",
+      linkJavaScript: "https://isaiaslourenco.github.io/consulta-cep/",
     },
     {
       id: 6,
-      title: "Portfólio - Isaias Lourenço",
-      description: "Projeto Portfolio para apresentar minhas experiências e habilidades, além do resumo Educacional, feito em React com tecnologias como Route, Hooks, Styled-Components e um Splash Screen inicial para um toque especial.",
-      image: "/portfolioIsaias.gif",
-      link: "https://isaiaslourenco-portfolio.vercel.app/",
-    },
-    {
-      id: 7,
-      title: "Restaurante",
-      description: "Projeto feito em HTML, CSS, Bootstrap, JavaScript, AJAX, PHP e MySQL para Restaurantes. Site auto gerenciável pelo próprio sistema, com cardápio, fotos e mensagens de clientes dinâmicas gerenciadas pelo sistema. Reserva de mesas, controle total de estoque e fluxo de caixa, aviso para clientes via e-mail e whatsapp, relatórios gerenciáveis de todas as funcionalidades do sistema.",
+      title: "Sistema para Restaurante — Full Stack",
+      description: "Sistema completo desenvolvido para restaurantes, integrando site e painel administrativo. Permite gerenciamento de cardápio, fotos e mensagens de clientes, reservas de mesas, controle de estoque e fluxo de caixa, além de relatórios gerenciáveis e envio de avisos aos clientes por e-mail e WhatsApp. Desenvolvido com HTML, CSS, Bootstrap, JavaScript, AJAX, PHP e MySQL.",
       image: "/restaurante.gif",
       link: "https://restaurante.vetor256.com/",
     },
     {
-      id: 8,
-      title: "Sistema Gerenciamento de Vendas - PDV",
-      description: "Sistema de gerenciamento de vendas (PDV) utilizando HTML, CSS, Bootstrap, JavaScript, AJAX, PHP e MySQL, voltado para comércios que necessitam de um ponto de venda eficiente, como supermercados, lanchonetes, beers, adegas e lojas de diversos segmentos. O sistema permite controle de estoque, gestão de fluxo de caixa, emissão de relatórios gerenciáveis e integração com e-mail e WhatsApp para avisos automáticos. Além disso, oferece um painel intuitivo para acompanhamento das métricas do negócio em tempo real, proporcionando praticidade e otimização na administração comercial.",
+      id: 7,
+      title: "Sistema de Gerenciamento de Vendas — PDV",
+      description: "Sistema Full Stack para gerenciamento de vendas e operações comerciais, desenvolvido para diferentes tipos de estabelecimentos. Possui controle de produtos e estoque, ponto de venda, fluxo de caixa, relatórios gerenciáveis e painel para acompanhamento das informações do negócio. Desenvolvido com HTML, CSS, Bootstrap, JavaScript, AJAX, PHP e MySQL.",
       image: "/pdv.gif",
       link: "https://pdv.vetor256.com/",
     },
     {
-      id: 9,
-      title: "Site Estático - Padoca",
-      description: "Site de apresentação da sua Padaria, Lanchonete, Restaurante, Supermercado, Beers, Adegas e Lojas, utilizando HTML, CSS e JavaScript, voltado para comércios que necessitam de identidade visal na internet a fim de propagar seus negócios de forma eficiente. O site permite receber e-mail dos clientes automaticamente.",
-      image: "/padoca.gif",
-      link: "https://isaiaslourenco.github.io/padoca/",
-    },
-    {
-      id: 10,
-      title: "E-Commerce - Vetor256",
-      description: "Comércio eletrônico em desenvolvimento utilizando PHP e MySQL, focado em proporcionar uma plataforma robusta e intuitiva para vendas online. O sistema permite o gerenciamento completo de produtos, controle de estoque, carrinho de compras e integração com múltiplos métodos de pagamento. Além disso, oferece funcionalidades de gestão de pedidos, acompanhamento de status de envio, e emissão de relatórios detalhados. A estrutura foi projetada para proporcionar uma experiência de compra fluida e otimizada para o cliente, com foco na escalabilidade e segurança, garantindo o sucesso nas transações online. Este site encontra-se em fase de construção, podendo conter recursos temporariamente indisponíveis ou em teste.",
-      image: "/e-commerce.gif",
-      link: "https://e-commerce.vetor256.com/",
-    },
-    {
-      id: 11,
-      title: "Imobiliaria - Vetor256",
-      description: "A Imobiliária está em fase de desenvolvimento e conta com uma estrutura moderna utilizando PHP com arquitetura MVC, gerenciamento de dependências via Composer e banco de dados MySQL para armazenamento e manipulação das informações. O sistema foi projetado para oferecer segurança, escalabilidade e facilidade de manutenção, garantindo uma base sólida para futuras expansões e integrações.",
+      id: 8,
+      title: "Sistema de Gestão Imobiliária — Vetor256",
+      description: "Sistema Full Stack desenvolvido em PHP e MySQL com arquitetura MVC e gerenciamento de dependências via Composer. Possui área pública para consulta de imóveis e painel administrativo para gerenciamento de imóveis, proprietários, tipos, finalidades e status. Conta com cadastro e edição de imóveis, upload de imagem de capa, galeria com múltiplas fotos, exclusão de imagens, páginas públicas de detalhes, imóveis para venda e locação, sistema de favoritos e recursos preparados para expansão.",
       image: "/imobiliaria.gif",
       link: "https://imobiliaria.vetor256.com/",
     },
     {
-      id: 12,
-      title: "Delivery - Vetor256",
-      description: "Projeto feito em HTML, CSS, Bootstrap, JavaScript, AJAX, PHP e MySQL para Lanchonetes com delivery. Site auto gerenciável pelo próprio sistema, com cardápio, fotos e mensagens de clientes dinâmicas gerenciadas pelo sistema. Reserva de mesas, controle total de estoque e fluxo de caixa, aviso para clientes via e-mail e whatsapp, relatórios gerenciáveis de todas as funcionalidades do sistema. Total controle de entregas e moto boys, online e atualizável em tempo real.",
+      id: 9,
+      title: "Sistema de Delivery — Vetor256",
+      description: "Sistema Full Stack para lanchonetes e restaurantes, desenvolvido para centralizar pedidos, reservas, estoque, gestão de conteúdo e acompanhamento operacional. O projeto utiliza PHP, MySQL, JavaScript, AJAX e Bootstrap, com funcionalidades de pedidos para entrega, balcão e mesa, gerenciamento de estoque, reservas, relatórios e comunicação com clientes. Atualmente em processo de evolução e finalização.",
       image: "/delivery.gif",
       link: "https://delivery.vetor256.com/",
     },
@@ -118,9 +98,21 @@ const Projects = ({ visible, onClose }) => {
               <Image src={project.image} alt={project.title} />
               <CardTitle>{project.title}</CardTitle>
               <Description>{project.description}</Description>
-              <Button href={project.link} target="_blank" rel="noopener noreferrer">
-                Ver Projeto
-              </Button>
+              {project.linkReact && project.linkJavaScript ? (
+                <ButtonGroup>
+                  <Button href={project.linkReact} target="_blank" rel="noopener noreferrer">
+                    Versão React
+                  </Button>
+
+                  <Button href={project.linkJavaScript} target="_blank" rel="noopener noreferrer">
+                    Versão JavaScript
+                  </Button>
+                </ButtonGroup>
+              ) : (
+                <Button href={project.link} target="_blank" rel="noopener noreferrer">
+                  Ver Projeto
+                </Button>
+              )}
             </Card>
           ))}
         </Grid>
@@ -218,9 +210,16 @@ const Description = styled.p`
   margin-bottom: 20px;
 `;
 
+const ButtonGroup = styled.div`
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
+
 const Button = styled.a`
   font-size: 16px;
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.buttonText};
   background: ${({ theme }) => theme.buttonBackground};
   padding: 10px 20px;
   text-decoration: none;
